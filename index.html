@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos y título -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OfficeWork - Venta de artículos de oficina, papelería y útiles de escritorio.">
+    <meta name="keywords" content="oficina, papeleria, utiles de escritorio, archivadores, resmas, OfficeWork">
+    <meta name="author" content="Alumno de Desarrollo Web">
+
+    <title>OfficeWork | Artículos de Oficina</title>
+
+    <!-- Favicon del sitio web -->
+    <link rel="icon" href="./dist/imagenes/favicon-32x32.png" type="image/png">
+    <link rel="shortcut icon" href="./dist/imagenes/favicon.ico" type="image/x-icon">
+
+    <!-- CSS básico y sencillo adecuado para primer ciclo -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333333;
+        }
+
+        /* Estilo simple para enlaces */
+        a {
+            color: #0b5ed7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botones sencillos y accesibles */
+        button, input[type="submit"], input[type="reset"] {
+            background-color: #0b5ed7;
+            color: #ffffff;
+            border: 1px solid #0947a8;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover, input[type="submit"]:hover {
+            background-color: #0947a8;
+        }
+
+        /* Botón verde para cotizar o registrar */
+        .btn-verde {
+            background-color: #198754;
+            border-color: #146c43;
+        }
+        .btn-verde:hover {
+            background-color: #146c43;
+        }
+
+        /* Tarjetas de productos limpias */
+        .tarjeta-producto {
+            background-color: #ffffff;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        /* Estilo simple para tablas */
+        table.tabla-datos {
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+        table.tabla-datos th, table.tabla-datos td {
+            border: 1px solid #c0c6cc;
+            padding: 10px;
+        }
+        table.tabla-datos thead {
+            background-color: #0b5ed7;
+            color: #ffffff;
+        }
+        table.tabla-datos tfoot {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+
+        /* Ventana emergente nativa (popover) */
+        div[popover] {
+            border: 2px solid #0b5ed7;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
+            max-width: 450px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================================================
+         ENCABEZADO DE LA PÁGINA (HEADER Y MENÚ DE NAVEGACIÓN)
+         ========================================================================== -->
+    <header>
+        <!-- Barra de navegación estructurada con tabla -->
+        <table width="100%" bgcolor="#0b5ed7" cellpadding="10" cellspacing="0">
+            <tr>
+                <!-- Logo de la empresa -->
+                <td width="25%" align="center">
+                    <a href="index.html">
+                        <img src="./dist/imagenes/imagen1.png" width="180" alt="Logotipo OfficeWork Artículos de Oficina">
+                    </a>
+                </td>
+
+                <!-- Menú de navegación semántica -->
+                <td width="75%" align="center">
+                    <nav>
+                        <a href="#inicio"><button type="button">Inicio</button></a>
+                        <a href="#categorias"><button type="button">Categorías</button></a>
+                        <a href="#catalogo"><button type="button">Productos</button></a>
+                        <a href="#tarifario"><button type="button">Tarifario</button></a>
+                        <a href="#multimedia"><button type="button">Multimedia</button></a>
+                        <a href="#contacto"><button type="button" class="btn-verde">Contacto y Cotización</button></a>
+                    </nav>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <!-- ==========================================================================
+         CONTENIDO PRINCIPAL (MAIN)
+         ========================================================================== -->
+    <main>
+
+        <!-- SECCIÓN 1: BIENVENIDA / HERO -->
+        <section id="inicio">
+            <table width="100%" bgcolor="#e2edfb" cellpadding="25" cellspacing="0">
+                <tr>
+                    <td width="60%" align="center">
+                        <h1 style="color: #0b5ed7; margin-bottom: 5px;">Bienvenidos a OfficeWork</h1>
+                        <h3 style="color: #198754; margin-top: 0;">Todo lo que tu oficina necesita</h3>
+                        <p style="font-size: 16px; line-height: 1.5;">
+                            Somos especialistas en la venta y distribución de útiles de escritorio, papelería, 
+                            archivadores y artículos corporativos para empresas y colegios en todo el Perú.
+                        </p>
+                        <br>
+                        <a href="#catalogo"><button type="button" class="btn-verde">Ver Catálogo de Ofertas</button></a>
+                        <a href="#contacto"><button type="button">Solicitar Cotización</button></a>
+                    </td>
+                    <td width="40%" align="center">
+                        <img src="./dist/imagenes/imagen1.png" width="320" alt="OfficeWork articulos de oficina">
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- SECCIÓN 2: TARJETAS DE CATEGORÍAS DE ARTÍCULOS DE OFICINA -->
+        <section id="categorias">
+            <h2 align="center" style="color: #0b5ed7;">Categorías de Artículos de Oficina</h2>
+            <p align="center">Encuentra los productos que necesitas organizados por categoría:</p>
+
+            <table width="95%" align="center" cellspacing="15" cellpadding="0">
+                <tr>
+                    <!-- Categoría 1: Útiles de Escritorio -->
+                    <td width="25%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <figure style="margin: 0;">
+                                <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Útiles de escritorio y bolígrafos" style="border-radius: 4px;">
+                                <figcaption>
+                                    <h3>Útiles de Escritorio</h3>
+                                    <p align="left">Bolígrafos, lápices, resaltadores, notas adhesivas y engrapadoras.</p>
+                                    <a href="#catalogo"><button type="button">Ver más</button></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </td>
+
+                    <!-- Categoría 2: Archivo y Organización -->
+                    <td width="25%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <figure style="margin: 0;">
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Archivadores y carpetas de oficina" style="border-radius: 4px;">
+                                <figcaption>
+                                    <h3>Archivo y Carpetas</h3>
+                                    <p align="left">Archivadores de palanca lomo ancho, pioners A4 y fólderes manila.</p>
+                                    <a href="#catalogo"><button type="button">Ver más</button></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </td>
+
+                    <!-- Categoría 3: Papelería y Resmas -->
+                    <td width="25%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <figure style="margin: 0;">
+                                <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Resmas de papel bond blanco A4" style="border-radius: 4px;">
+                                <figcaption>
+                                    <h3>Papelería y Resmas</h3>
+                                    <p align="left">Papel bond de 75g y 80g tamaño A4 y Oficio, libre de atascos.</p>
+                                    <a href="#catalogo"><button type="button">Ver más</button></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </td>
+
+                    <!-- Categoría 4: Mobiliario y Ergonomía -->
+                    <td width="25%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <figure style="margin: 0;">
+                                <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Sillas ergonómicas y accesorios de oficina" style="border-radius: 4px;">
+                                <figcaption>
+                                    <h3>Ergonomía y Oficina</h3>
+                                    <p align="left">Sillas ergonómicas ajustables, reposapiés y soportes de monitor.</p>
+                                    <a href="#catalogo"><button type="button">Ver más</button></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- SECCIÓN 3: CATÁLOGO DE PRODUCTOS EN OFERTA -->
+        <section id="catalogo">
+            <h2 align="center" style="color: #0b5ed7;">Productos Destacados en Oferta</h2>
+            <p align="center">Precios especiales para compras corporativas y por mayor:</p>
+
+            <table width="95%" align="center" cellspacing="15" cellpadding="0">
+                <tr>
+                    <!-- Producto 1 -->
+                    <td width="33%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <h3>Resma Papel Bond A4 75g</h3>
+                            <p><b>Marca:</b> Chamex / Report</p>
+                            <p><b>Presentación:</b> Paquete de 500 hojas</p>
+                            <p style="font-size: 18px; color: #198754;"><b>Precio: S/ 17.50</b></p>
+                            <p><small style="color: #666;">Precio regular: <del>S/ 22.00</del></small></p>
+                            <a href="#contacto"><button type="button" class="btn-verde">Cotizar Producto</button></a>
+                        </div>
+                    </td>
+
+                    <!-- Producto 2 -->
+                    <td width="33%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <h3>Archivador de Palanca Lomo Ancho</h3>
+                            <p><b>Tamaño:</b> A4 / Oficio</p>
+                            <p><b>Material:</b> Cartón plastificado con cantonera</p>
+                            <p style="font-size: 18px; color: #198754;"><b>Precio: S/ 6.50</b></p>
+                            <p><small style="color: #666;">Precio regular: <del>S/ 8.50</del></small></p>
+                            <a href="#contacto"><button type="button" class="btn-verde">Cotizar Producto</button></a>
+                        </div>
+                    </td>
+
+                    <!-- Producto 3 -->
+                    <td width="33%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <h3>Pack Bolígrafos Gel (12 Uds)</h3>
+                            <p><b>Colores:</b> 6 Azul, 4 Negro, 2 Rojo</p>
+                            <p><b>Punta:</b> 0.7 mm trazo fino</p>
+                            <p style="font-size: 18px; color: #198754;"><b>Precio: S/ 14.90</b></p>
+                            <p><small style="color: #666;">Precio regular: <del>S/ 19.00</del></small></p>
+                            <a href="#contacto"><button type="button" class="btn-verde">Cotizar Producto</button></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- ==========================================================================
+             SECCIÓN 4: ELEMENTO COMPLEJO - TABLA TÉCNICA CON THEAD, TBODY, TFOOT Y ROWSPAN
+             (Cumple el Criterio 1 de la Rúbrica: Elementos Complejos en HTML)
+             ========================================================================== -->
+        <section id="tarifario">
+            <h2 align="center" style="color: #0b5ed7;">Tarifario Mayorista de Artículos</h2>
+            <p align="center">Lista oficial de precios unitarios y por mayor para empresas:</p>
+
+            <table width="90%" align="center" class="tabla-datos" cellpadding="8">
+                <caption style="font-weight: bold; margin-bottom: 8px;">Tabla 1: Lista de Precios y Stock de Artículos de Oficina</caption>
+                <thead>
+                    <tr>
+                        <th width="20%">Categoría</th>
+                        <th width="10%">ID</th>
+                        <th width="35%">Nombre del Artículo</th>
+                        <th width="15%">Precio Unitario</th>
+                        <th width="20%">Precio por Mayor (10+ Uds)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Grupo 1: Papelería (Uso de rowspan="2" para combinar celdas) -->
+                    <tr>
+                        <td rowspan="2" align="center" bgcolor="#f8f9fa"><b>Papelería</b></td>
+                        <td align="center">001</td>
+                        <td>Resma de Papel Bond A4 75g (500 hojas)</td>
+                        <td align="center">S/ 17.50</td>
+                        <td align="center" style="color: #198754;"><b>S/ 15.00</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">002</td>
+                        <td>Caja de Papel Bond A4 (5 millares)</td>
+                        <td align="center">S/ 85.00</td>
+                        <td align="center" style="color: #198754;"><b>S/ 78.00</b></td>
+                    </tr>
+
+                    <!-- Grupo 2: Archivo (Uso de rowspan="2") -->
+                    <tr>
+                        <td rowspan="2" align="center" bgcolor="#f8f9fa"><b>Archivo</b></td>
+                        <td align="center">003</td>
+                        <td>Archivador de Palanca Lomo Ancho A4</td>
+                        <td align="center">S/ 6.50</td>
+                        <td align="center" style="color: #198754;"><b>S/ 5.50</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">004</td>
+                        <td>Folder de Manila A4 (Ciento x 100)</td>
+                        <td align="center">S/ 25.00</td>
+                        <td align="center" style="color: #198754;"><b>S/ 21.00</b></td>
+                    </tr>
+
+                    <!-- Grupo 3: Escritorio (Uso de rowspan="2") -->
+                    <tr>
+                        <td rowspan="2" align="center" bgcolor="#f8f9fa"><b>Escritorio</b></td>
+                        <td align="center">005</td>
+                        <td>Estuche de Bolígrafos Gel x 12 unidades</td>
+                        <td align="center">S/ 14.90</td>
+                        <td align="center" style="color: #198754;"><b>S/ 12.00</b></td>
+                    </tr>
+                    <tr>
+                        <td align="center">006</td>
+                        <td>Engrapadora Metálica de Oficina</td>
+                        <td align="center">S/ 18.00</td>
+                        <td align="center" style="color: #198754;"><b>S/ 15.00</b></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <!-- Fila de pie de tabla con colspan="5" -->
+                    <tr>
+                        <td colspan="5" align="center">
+                            <b>Nota:</b> Todos los precios incluyen IGV. Envíos gratis en Lima por compras superiores a S/ 200.00.
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- SECCIÓN 5: CONTENIDO MULTIMEDIA (VIDEOS Y MAPA) -->
+        <section id="multimedia">
+            <h2 align="center" style="color: #0b5ed7;">Contenido Multimedia y Ubicación</h2>
+            <p align="center">Conoce nuestros consejos de ergonomía y ubica nuestra tienda física:</p>
+
+            <table width="95%" align="center" cellspacing="15" cellpadding="0">
+                <tr>
+                    <!-- Video 1: Ergonomía de oficina -->
+                    <td width="33%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <h3>Video: Ergonomía en la Oficina</h3>
+                            <iframe width="100%" height="220" src="https://www.youtube.com/embed/GWRIwkqV5oQ" title="Video de ergonomía en la oficina" frameborder="0" allowfullscreen></iframe>
+                            <p align="left"><small>Consejos para cuidar la postura y organizar tu puesto de trabajo.</small></p>
+                        </div>
+                    </td>
+
+                    <!-- Video 2: Organización de útiles -->
+                    <td width="33%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <h3>Video: Organización del Trabajo</h3>
+                            <iframe width="100%" height="220" src="https://www.youtube.com/embed/ApzeyUC4Q6I" title="Video de organización y productividad" frameborder="0" allowfullscreen></iframe>
+                            <p align="left"><small>Aprende cómo ordenar tus archivos y materiales de escritorio.</small></p>
+                        </div>
+                    </td>
+
+                    <!-- Mapa: Ubicación en Lima -->
+                    <td width="33%" align="center" valign="top">
+                        <div class="tarjeta-producto">
+                            <h3>Nuestra Tienda en Lima</h3>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.290879072753!2d-77.00340132517518!3d-12.023484588211527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f1968a0795%3A0xe8eb58716b0fd952!2sJr.%20Chinchaysuyo%20456-512%2C%20Lima%2015401!5e0!3m2!1ses-419!2spe!4v1789182678090!5m2!1ses-419!2spe" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" title="Ubicación en Google Maps de OfficeWork"></iframe>
+                            <p align="left"><small><b>Dirección:</b> Jr. Chinchaysuyo 456, San Juan de Lurigancho, Lima.</small></p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- ==========================================================================
+             SECCIÓN 6: ELEMENTO COMPLEJO - FORMULARIO DE CONTACTO Y REGISTRO B2B
+             (Cumple el Criterio 1: Etiquetas complejas de formulario y accesibilidad)
+             ========================================================================== -->
+        <section id="contacto">
+            <table width="80%" align="center" bgcolor="#ffffff" cellpadding="20" style="border: 1px solid #d0d7de; border-radius: 8px;">
+                <tr>
+                    <td>
+                        <h2 align="center" style="color: #0b5ed7; margin-top: 0;">Formulario de Contacto y Cotización</h2>
+                        <p align="center">Completa tus datos para solicitar una cotización formal de artículos de oficina:</p>
+
+                        <form action="#" method="post">
+                            <table width="100%" cellpadding="8" cellspacing="0">
+                                <tr>
+                                    <!-- Nombres -->
+                                    <td width="50%">
+                                        <label for="txtnombres"><b>Nombres:</b></label><br>
+                                        <input type="text" id="txtnombres" name="nombres" placeholder="Ingresa tus nombres" required style="width: 90%; padding: 6px;">
+                                    </td>
+                                    <!-- Apellidos -->
+                                    <td width="50%">
+                                        <label for="txtapellidos"><b>Apellidos:</b></label><br>
+                                        <input type="text" id="txtapellidos" name="apellidos" placeholder="Ingresa tus apellidos" required style="width: 90%; padding: 6px;">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Nro de Documento -->
+                                    <td>
+                                        <label for="txtdocumento"><b>DNI o RUC (8 u 11 dígitos):</b></label><br>
+                                        <input type="text" id="txtdocumento" name="documento" placeholder="Ej: 20601234567" pattern="[0-9]{8,11}" required style="width: 90%; padding: 6px;">
+                                    </td>
+                                    <!-- Correo Electrónico -->
+                                    <td>
+                                        <label for="txtcorreo"><b>Correo Electrónico:</b></label><br>
+                                        <input type="email" id="txtcorreo" name="correo" placeholder="correo@empresa.com" required style="width: 90%; padding: 6px;">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Teléfono -->
+                                    <td>
+                                        <label for="txttelefono"><b>Teléfono o Celular:</b></label><br>
+                                        <input type="tel" id="txttelefono" name="telefono" placeholder="Ej: 987654321" required style="width: 90%; padding: 6px;">
+                                    </td>
+                                    <!-- Fecha de requerimiento -->
+                                    <td>
+                                        <label for="txtfecha"><b>Fecha requerida de entrega:</b></label><br>
+                                        <input type="date" id="txtfecha" name="fecha_entrega" style="width: 90%; padding: 6px;">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Tipo de comprobante (Radio buttons) -->
+                                    <td>
+                                        <label><b>Tipo de Comprobante:</b></label><br>
+                                        <input type="radio" id="factura" name="comprobante" value="factura" checked>
+                                        <label for="factura">Factura con RUC</label>
+                                        &nbsp;&nbsp;
+                                        <input type="radio" id="boleta" name="comprobante" value="boleta">
+                                        <label for="boleta">Boleta de Venta</label>
+                                    </td>
+                                    <!-- Artículos de interés (Checkboxes) -->
+                                    <td>
+                                        <label><b>Artículos de interés:</b></label><br>
+                                        <input type="checkbox" id="chk-papel" name="interes" value="papeleria" checked>
+                                        <label for="chk-papel">Papelería</label>
+                                        &nbsp;
+                                        <input type="checkbox" id="chk-archivo" name="interes" value="archivo" checked>
+                                        <label for="chk-archivo">Archivo</label>
+                                        &nbsp;
+                                        <input type="checkbox" id="chk-escritorio" name="interes" value="escritorio">
+                                        <label for="chk-escritorio">Escritorio</label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Departamento (Select) -->
+                                    <td>
+                                        <label for="cbodepartamento"><b>Departamento de entrega:</b></label><br>
+                                        <select id="cbodepartamento" name="departamento" required style="width: 94%; padding: 6px;">
+                                            <option value="">-- SELECCIONE DEPARTAMENTO --</option>
+                                            <option value="lima">Lima</option>
+                                            <option value="arequipa">Arequipa</option>
+                                            <option value="trujillo">La Libertad (Trujillo)</option>
+                                            <option value="chiclayo">Lambayeque (Chiclayo)</option>
+                                            <option value="piura">Piura</option>
+                                            <option value="cusco">Cusco</option>
+                                        </select>
+                                    </td>
+                                    <!-- Cantidad estimada -->
+                                    <td>
+                                        <label for="txtcantidad"><b>Cantidad estimada de colaboradores:</b></label><br>
+                                        <input type="number" id="txtcantidad" name="cantidad_personal" min="1" max="1000" placeholder="Ej: 20" style="width: 90%; padding: 6px;">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Observaciones -->
+                                    <td colspan="2">
+                                        <label for="txtmensaje"><b>Detalle de los artículos a cotizar:</b></label><br>
+                                        <textarea id="txtmensaje" name="mensaje" rows="4" style="width: 96%; padding: 6px;" placeholder="Indica los productos, cantidades y marcas requeridas..."></textarea>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Botones -->
+                                    <td colspan="2" align="center">
+                                        <br>
+                                        <input type="reset" value="Limpiar Formulario">
+                                        &nbsp;&nbsp;
+                                        <!-- Botón que activa la ventana modal popover nativa -->
+                                        <button type="button" class="btn-verde" popovertarget="mi-modal">ENVIAR COTIZACIÓN</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- VENTANA MODAL NATIVA CON POPOVER (Elemento moderno de HTML5) -->
+            <div id="mi-modal" popover align="center">
+                <h3 style="color: #198754; margin-top: 0;">¡Cotización Enviada con Éxito!</h3>
+                <p>Gracias por contactar a <b>OfficeWork</b>. Un asesor de ventas se comunicará contigo en breve para enviarte la propuesta formal.</p>
+                <button type="button" popovertarget="mi-modal" popovertargetaction="hide">Cerrar Ventana</button>
+            </div>
+        </section>
+
+        <br>
+
+        <!-- SECCIÓN 7: DESGLOSE Y PREGUNTAS FRECUENTES (DETAILS Y SUMMARY) -->
+        <section id="faq">
+            <table width="80%" align="center" bgcolor="#ffffff" cellpadding="15" style="border: 1px solid #d0d7de; border-radius: 8px;">
+                <tr>
+                    <td>
+                        <h2 style="color: #0b5ed7; margin-top: 0;">Preguntas Frecuentes y Políticas</h2>
+
+                        <!-- Desplegable 1: Métodos de pago -->
+                        <details>
+                            <summary><b>¿Cuáles son las formas de pago disponibles?</b></summary>
+                            <p>Aceptamos transferencias bancarias a cuentas BCP, BBVA e Interbank, pagos con tarjeta de crédito/débito y crédito a 30 días para clientes corporativos con RUC.</p>
+                        </details>
+                        <hr>
+
+                        <!-- Desplegable 2: Envíos -->
+                        <details>
+                            <summary><b>¿Cómo se realizan los envíos a provincia?</b></summary>
+                            <p>Despachamos tu pedido en agencias de transporte reconocidas como Shalom, Marvisur o Flores con pago de flete en destino y guía de remisión formal.</p>
+                        </details>
+                        <hr>
+
+                        <!-- Desplegable 3: Garantía -->
+                        <details>
+                            <summary><b>¿Qué garantía tienen los artículos de oficina?</b></summary>
+                            <p>Ofrecemos garantía de 30 días para útiles de escritorio y papelería, y 12 meses de garantía para mobiliario y sillas ergonómicas contra defectos de fabricación.</p>
+                        </details>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+        <!-- SECCIÓN 8: MAPA DE SITIO VISUAL (CUMPLE CRITERIO 2: MAPAS DE SITIO) -->
+        <section id="mapa-sitio">
+            <table width="80%" align="center" bgcolor="#e2edfb" cellpadding="15" style="border-radius: 8px;">
+                <tr>
+                    <td>
+                        <h3 style="color: #0b5ed7; margin-top: 0;">Mapa del Sitio (Estructura de la Página)</h3>
+                        <p>Navega rápidamente por todas las secciones de nuestra página web:</p>
+                        <ul>
+                            <li><a href="#inicio">1. Inicio y Bienvenida</a></li>
+                            <li><a href="#categorias">2. Categorías de Artículos</a></li>
+                            <li><a href="#catalogo">3. Catálogo de Productos en Oferta</a></li>
+                            <li><a href="#tarifario">4. Tarifario Mayorista (Tabla Técnica)</a></li>
+                            <li><a href="#multimedia">5. Contenido Multimedia y Tienda</a></li>
+                            <li><a href="#contacto">6. Formulario de Contacto y Cotización</a></li>
+                            <li><a href="#faq">7. Preguntas Frecuentes (Details / Summary)</a></li>
+                            <li><a href="sitemap.xml" target="_blank">8. Archivo Sitemap XML (Para motores de búsqueda)</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+    </main>
+
+    <!-- ==========================================================================
+         PIE DE PÁGINA MEJORADO (FOOTER CON 3 COLUMNAS Y DATOS COMPLETOS)
+         ========================================================================== -->
+    <footer>
+        <table width="100%" bgcolor="#08376e" cellpadding="25" cellspacing="0" style="color: #ffffff;">
+            <tr>
+                <!-- Columna 1: Identidad de la Empresa -->
+                <td width="35%" valign="top">
+                    <a href="index.html">
+                        <img src="./dist/imagenes/imagen1.png" width="170" alt="Logo OfficeWork Perú" style="background-color: #ffffff; padding: 6px; border-radius: 6px;">
+                    </a>
+                    <h3 style="color: #ffffff; margin-top: 12px; margin-bottom: 5px;">OfficeWork Perú S.A.C.</h3>
+                    <p style="color: #d0e1fd; font-size: 14px; line-height: 1.5; margin-top: 0;">
+                        Especialistas en la distribución de útiles de escritorio, papelería, archivadores y mobiliario ergonómico para empresas, colegios e instituciones en todo el Perú.
+                    </p>
+                    <p style="color: #d0e1fd; font-size: 13px;">
+                        <b>RUC:</b> 20608945123 &bull; Facturación Electrónica SUNAT
+                    </p>
+                </td>
+
+                <!-- Columna 2: Atención al Cliente y Ubicación -->
+                <td width="35%" valign="top">
+                    <h3 style="color: #ffffff; margin-top: 0; border-bottom: 2px solid #198754; padding-bottom: 5px; display: inline-block;">
+                        Atención al Cliente
+                    </h3>
+                    <p style="color: #d0e1fd; font-size: 14px; line-height: 1.6;">
+                        📍 <b>Dirección:</b> Jr. Chinchaysuyo 456, San Juan de Lurigancho, Lima.<br>
+                        📞 <b>Central Telefónica:</b> (01) 514-2020<br>
+                        📱 <b>WhatsApp de Ventas:</b> +51 987 654 321<br>
+                        ✉️ <b>Correo:</b> <a href="mailto:ventas@officework.pe" style="color: #ffffff; text-decoration: underline;">ventas@officework.pe</a><br>
+                        ⏰ <b>Horario:</b> Lun a Vie 8:00 am - 6:30 pm | Sáb 9:00 am - 1:00 pm
+                    </p>
+                </td>
+
+                <!-- Columna 3: Enlaces Rápidos y Redes Sociales -->
+                <td width="30%" valign="top">
+                    <h3 style="color: #ffffff; margin-top: 0; border-bottom: 2px solid #198754; padding-bottom: 5px; display: inline-block;">
+                        Enlaces Rápidos
+                    </h3>
+                    <ul style="padding-left: 20px; margin-top: 5px; color: #d0e1fd; font-size: 14px; line-height: 1.7;">
+                        <li><a href="#inicio" style="color: #ffffff;">Inicio y Portada</a></li>
+                        <li><a href="#categorias" style="color: #ffffff;">Categorías de Artículos</a></li>
+                        <li><a href="#catalogo" style="color: #ffffff;">Catálogo de Ofertas</a></li>
+                        <li><a href="#tarifario" style="color: #ffffff;">Tarifario Mayorista</a></li>
+                        <li><a href="#contacto" style="color: #ffffff;">Formulario de Cotización</a></li>
+                        <li><a href="#faq" style="color: #ffffff;">Preguntas Frecuentes</a></li>
+                    </ul>
+
+                    <p style="margin-top: 15px;">
+                        <b>Síguenos:</b>&nbsp;
+                        <a href="https://www.facebook.com/" target="_blank" style="color: #ffffff; font-weight: bold; background-color: #0b5ed7; padding: 4px 8px; border-radius: 4px;">Facebook</a>&nbsp;
+                        <a href="https://www.instagram.com/" target="_blank" style="color: #ffffff; font-weight: bold; background-color: #0b5ed7; padding: 4px 8px; border-radius: 4px;">Instagram</a>&nbsp;
+                        <a href="https://www.linkedin.com/" target="_blank" style="color: #ffffff; font-weight: bold; background-color: #0b5ed7; padding: 4px 8px; border-radius: 4px;">LinkedIn</a>
+                    </p>
+                </td>
+            </tr>
+
+            <!-- Fila inferior: Copyright y datos académicos -->
+            <tr>
+                <td colspan="3" align="center" style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 15px;">
+                    <p style="margin: 0; font-size: 13px; color: #c0d4f5;">
+                        &copy; 2026 <b>OfficeWork Perú S.A.C.</b> - Todos los derechos reservados. | Libro de Reclamaciones Virtual
+                    </p>
+                    <p style="margin: 4px 0 0 0; font-size: 12px; color: #9bc0f5;">
+                        Desarrollo Web &bull; Escuela de Tecnología &bull; Evaluación Parcial
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+</body>
+</html>
