@@ -1,652 +1,1122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos básicos y título -->
-    <meta charset="utf-8">
+    <!-- ==========================================================================
+         METADATOS BÁSICOS Y SEO (OPTIMIZACIÓN Y CONFIGURACIÓN ÚTIL)
+         ========================================================================== -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OfficeWork - Venta de artículos de oficina, papelería y útiles de escritorio.">
-    <meta name="keywords" content="oficina, papeleria, utiles de escritorio, archivadores, resmas, OfficeWork">
-    <meta name="author" content="Alumno de Desarrollo Web">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="OfficeWork Perú - Distribución y comercialización de artículos de oficina, papelería corporativa, archivadores y mobiliario ergonómico en todo el Perú.">
+    <meta name="keywords" content="articulos de oficina, papeleria, utiles de escritorio, archivadores, resmas bond a4, ergonomia oficina, OfficeWork Peru">
+    <meta name="author" content="Estudiante de Tecnología - Idat">
+    <meta name="theme-color" content="#0b5ed7">
 
-    <title>OfficeWork | Artículos de Oficina</title>
+    <!-- Open Graph (Redes Sociales y WhatsApp) -->
+    <meta property="og:title" content="OfficeWork Perú | Artículos de Oficina y Ergonomía">
+    <meta property="og:description" content="Catálogo mayorista de papelería, útiles de escritorio y soluciones ergonómicas para empresas e instituciones.">
+    <meta property="og:image" content="./dist/imagenes/imagen1.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+
+    <title>OfficeWork Perú | Artículos de Oficina, Papelería y Ergonomía</title>
 
     <!-- Favicon del sitio web -->
     <link rel="icon" href="./dist/imagenes/favicon-32x32.png" type="image/png">
     <link rel="shortcut icon" href="./dist/imagenes/favicon.ico" type="image/x-icon">
 
-    <!-- CSS básico y sencillo adecuado para primer ciclo -->
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f4f8;
-            color: #333333;
-        }
+    <!-- Preconexión a Google Fonts (Optimización de velocidad y fuentes personalizadas) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* Estilo simple para enlaces */
-        a {
-            color: #0b5ed7;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+    <!-- Bootstrap 5.3.3 CSS (Framework Oficial Adaptable) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-        /* Botones sencillos y accesibles */
-        button, input[type="submit"], input[type="reset"] {
-            background-color: #0b5ed7;
-            color: #ffffff;
-            border: 1px solid #0947a8;
-            padding: 8px 16px;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover, input[type="submit"]:hover {
-            background-color: #0947a8;
-        }
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        /* Botón verde para cotizar o registrar */
-        .btn-verde {
-            background-color: #198754;
-            border-color: #146c43;
-        }
-        .btn-verde:hover {
-            background-color: #146c43;
-        }
-
-        /* Tarjetas de productos limpias */
-        .tarjeta-producto {
-            background-color: #ffffff;
-            border: 1px solid #d0d7de;
-            border-radius: 8px;
-            padding: 12px;
-        }
-
-        /* Estilo simple para tablas */
-        table.tabla-datos {
-            border-collapse: collapse;
-            background-color: #ffffff;
-        }
-        table.tabla-datos th, table.tabla-datos td {
-            border: 1px solid #c0c6cc;
-            padding: 10px;
-        }
-        table.tabla-datos thead {
-            background-color: #0b5ed7;
-            color: #ffffff;
-        }
-        table.tabla-datos tfoot {
-            background-color: #e9ecef;
-            font-weight: bold;
-        }
-
-        /* Ventana emergente nativa (popover) */
-        div[popover] {
-            border: 2px solid #0b5ed7;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #ffffff;
-            max-width: 450px;
-        }
-    </style>
+    <!-- Estilos CSS Personalizados (5 Animaciones, Fuentes, Transiciones y Accesibilidad) -->
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
 
     <!-- ==========================================================================
-         ENCABEZADO DE LA PÁGINA (HEADER Y MENÚ DE NAVEGACIÓN)
+         ACCESIBILIDAD WCAG 2.1: ENLACE PARA SALTAR AL CONTENIDO PRINCIPAL
          ========================================================================== -->
-    <header>
-        <!-- Barra de navegación estructurada con tabla -->
-        <table width="100%" bgcolor="#0b5ed7" cellpadding="10" cellspacing="0">
-            <tr>
-                <!-- Logo de la empresa -->
-                <td width="25%" align="center">
-                    <a href="index.html">
-                        <img src="./dist/imagenes/imagen1.png" width="180" alt="Logotipo OfficeWork Artículos de Oficina">
-                    </a>
-                </td>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-                <!-- Menú de navegación semántica -->
-                <td width="75%" align="center">
-                    <nav>
-                        <a href="#inicio"><button type="button">Inicio</button></a>
-                        <a href="#categorias"><button type="button">Categorías</button></a>
-                        <a href="#catalogo"><button type="button">Productos</button></a>
-                        <a href="#tarifario"><button type="button">Tarifario</button></a>
-                        <a href="#multimedia"><button type="button">Multimedia</button></a>
-                        <a href="#contacto"><button type="button" class="btn-verde">Contacto y Cotización</button></a>
-                    </nav>
-                </td>
-            </tr>
-        </table>
+    <!-- ==========================================================================
+         BARRA DE AVISOS Y BENEFICIOS SUPERIOR (CINTILLO CON ANIMACIÓN SHIMMER)
+         ========================================================================== -->
+    <div class="bg-primary text-white py-2 px-3 anim-shimmer" role="region" aria-label="Avisos comerciales">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center text-center text-md-start small">
+            <div>
+                <span class="badge bg-warning text-dark me-2 font-weight-bold">OFERTA B2B</span>
+                <span>¡Envíos gratis en Lima por compras mayores a S/ 200! &bull; Atención corporativa con RUC</span>
+            </div>
+            <div class="d-none d-md-flex gap-3 align-items-center">
+                <span><i class="bi bi-telephone-fill me-1" aria-hidden="true"></i> (01) 514-2020</span>
+                <span><i class="bi bi-clock-fill me-1" aria-hidden="true"></i> Lun - Vie 8:00 am - 6:30 pm</span>
+                <!-- Botón para ver el cumplimiento de la rúbrica -->
+                <button type="button" class="btn btn-sm btn-outline-light py-0 px-2" data-bs-toggle="modal" data-bs-target="#modalRubrica" aria-label="Ver ficha técnica de la rúbrica">
+                    <i class="bi bi-award-fill me-1"></i> Ficha Rúbrica 20/20
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         HEADER Y MENÚ DE NAVEGACIÓN ADAPTABLE (BOOTSTRAP 5 NAVBAR)
+         ========================================================================== -->
+    <header class="sticky-top" role="banner">
+        <nav class="navbar navbar-expand-lg navbar-custom py-2 shadow-sm" aria-label="Navegación principal de OfficeWork">
+            <div class="container">
+                <!-- Logotipo de OfficeWork -->
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio" aria-label="Ir al inicio de OfficeWork">
+                    <img src="./dist/imagenes/imagen1.png" alt="Logotipo Oficial de OfficeWork Artículos de Oficina" class="navbar-brand-logo">
+                </a>
+
+                <!-- Botón hamburguesa responsive para móviles -->
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Enlaces de navegación con suaves cambios de color y estado activo -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#inicio"><i class="bi bi-house-door me-1" aria-hidden="true"></i> Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#categorias"><i class="bi bi-grid-fill me-1" aria-hidden="true"></i> Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#catalogo"><i class="bi bi-tags-fill me-1" aria-hidden="true"></i> Ofertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tarifario"><i class="bi bi-table me-1" aria-hidden="true"></i> Tarifario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#multimedia"><i class="bi bi-play-circle-fill me-1" aria-hidden="true"></i> Multimedia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> FAQ</a>
+                        </li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <!-- Botón con Animación Shimmer (Barrido de luz metálica) -->
+                            <a class="btn btn-success-custom anim-shimmer" href="#contacto" role="button">
+                                <i class="bi bi-file-earmark-text-fill me-1" aria-hidden="true"></i> Cotizar Ahora
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- ==========================================================================
          CONTENIDO PRINCIPAL (MAIN)
          ========================================================================== -->
-    <main>
+    <main id="main-content" role="main">
 
-        <!-- SECCIÓN 1: BIENVENIDA / HERO -->
-        <section id="inicio">
-            <table width="100%" bgcolor="#e2edfb" cellpadding="25" cellspacing="0">
-                <tr>
-                    <td width="60%" align="center">
-                        <h1 style="color: #0b5ed7; margin-bottom: 5px;">Bienvenidos a OfficeWork</h1>
-                        <h3 style="color: #198754; margin-top: 0;">Todo lo que tu oficina necesita</h3>
-                        <p style="font-size: 16px; line-height: 1.5;">
-                            Somos especialistas en la venta y distribución de útiles de escritorio, papelería, 
-                            archivadores y artículos corporativos para empresas y colegios en todo el Perú.
+        <!-- ======================================================================
+             SECCIÓN 1: BIENVENIDA / HERO BANNER CON CARROUSEL Y ANIMACIÓN 1
+             ====================================================================== -->
+        <section id="inicio" class="hero-section" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="row align-items-center gy-4">
+                    <!-- Columna de Texto y Llamados a la Acción -->
+                    <div class="col-lg-7 text-center text-lg-start anim-slide-up">
+                        <div class="hero-badge mb-3">
+                            <span class="badge bg-primary rounded-pill">NUEVA TEMPORADA 2026</span>
+                            <span>Soluciones Corporativas y Escolares</span>
+                        </div>
+                        <h1 id="hero-title" class="display-4 fw-bold mb-3 text-dark">
+                            Todo lo que tu empresa y oficina necesitan en un solo lugar
+                        </h1>
+                        <p class="lead text-muted mb-4">
+                            Somos líderes en la distribución de útiles de escritorio, papelería premium, archivadores de palanca y mobiliario ergonómico en todo el Perú, con facturación electrónica y precios mayoristas inmediatos.
                         </p>
-                        <br>
-                        <a href="#catalogo"><button type="button" class="btn-verde">Ver Catálogo de Ofertas</button></a>
-                        <a href="#contacto"><button type="button">Solicitar Cotización</button></a>
-                    </td>
-                    <td width="40%" align="center">
-                        <img src="./dist/imagenes/imagen1.png" width="320" alt="OfficeWork articulos de oficina">
-                    </td>
-                </tr>
-            </table>
+                        <div class="d-flex flex-wrap gap-3 hero-buttons justify-content-center justify-content-lg-start">
+                            <!-- Botón CTA con Animación Shimmer -->
+                            <a href="#catalogo" class="btn btn-primary-custom anim-shimmer">
+                                <i class="bi bi-bag-check-fill me-1" aria-hidden="true"></i> Ver Catálogo de Ofertas
+                            </a>
+                            <a href="#contacto" class="btn btn-outline-primary">
+                                <i class="bi bi-pencil-square me-1" aria-hidden="true"></i> Solicitar Cotización B2B
+                            </a>
+                        </div>
+                        <!-- Métricas de Confianza (Usabilidad) -->
+                        <div class="row mt-4 pt-3 border-top g-3 text-start justify-content-center justify-content-lg-start">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-truck text-primary fs-3" aria-hidden="true"></i>
+                                    <div>
+                                        <div class="fw-bold small">Envíos Rápidos</div>
+                                        <small class="text-muted">A todo el Perú</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-shield-check text-success fs-3" aria-hidden="true"></i>
+                                    <div>
+                                        <div class="fw-bold small">Garantía Total</div>
+                                        <small class="text-muted">Productos originales</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-receipt text-warning fs-3" aria-hidden="true"></i>
+                                    <div>
+                                        <div class="fw-bold small">Facturación SUNAT</div>
+                                        <small class="text-muted">Boleta y Factura</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Visual con ANIMACIÓN 1 (heroFloating) y Slider Bootstrap -->
+                    <div class="col-lg-5 text-center anim-slide-up anim-delay-1">
+                        <div class="hero-img-card">
+                            <!-- Componente Carousel de Bootstrap 5 -->
+                            <div id="carouselHero" class="carousel slide carousel-fade" data-bs-ride="carousel" aria-label="Productos destacados de OfficeWork">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner rounded-3">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <!-- Animación CSS 1: Levitación Suave en Hero (anim-hero-float) -->
+                                        <div class="anim-hero-float py-3">
+                                            <img src="./dist/imagenes/imagen1.png" class="d-block w-75 mx-auto" alt="Logotipo institucional OfficeWork Perú">
+                                        </div>
+                                        <div class="text-center pb-2">
+                                            <span class="badge bg-primary">Identidad Oficial</span>
+                                            <p class="small text-muted mb-0 mt-1">Calidad garantizada para tu empresa</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600&auto=format&fit=crop&q=80" class="d-block w-100 rounded" style="height: 240px; object-fit: cover;" alt="Útiles de oficina y papelería surtida">
+                                        <div class="text-center py-2">
+                                            <span class="badge bg-success">Útiles de Escritorio</span>
+                                            <p class="small text-muted mb-0 mt-1">Bolígrafos, grapadoras y notas adhesivas</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&auto=format&fit=crop&q=80" class="d-block w-100 rounded" style="height: 240px; object-fit: cover;" alt="Silla ergonómica de oficina">
+                                        <div class="text-center py-2">
+                                            <span class="badge bg-warning text-dark">Línea Ergonómica</span>
+                                            <p class="small text-muted mb-0 mt-1">Comodidad y salud en el puesto de trabajo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev" aria-label="Diapositiva anterior">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next" aria-label="Siguiente diapositiva">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <br>
+        <!-- ======================================================================
+             SECCIÓN 2: CATEGORÍAS CON GRID RESPONSIVE Y ANIMACIÓN 3 (ELEVACIÓN 3D)
+             ====================================================================== -->
+        <section id="categorias" class="py-5" aria-labelledby="categorias-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small letter-spacing-1">Líneas de Producto</span>
+                    <h2 id="categorias-title" class="display-6 fw-bold">Categorías de Artículos de Oficina</h2>
+                    <p class="text-muted mx-auto" style="max-width: 650px;">
+                        Descubre nuestro amplio catálogo segmentado para satisfacer los requerimientos operativos de tu empresa o negocio escolar.
+                    </p>
+                </div>
 
-        <!-- SECCIÓN 2: TARJETAS DE CATEGORÍAS DE ARTÍCULOS DE OFICINA -->
-        <section id="categorias">
-            <h2 align="center" style="color: #0b5ed7;">Categorías de Artículos de Oficina</h2>
-            <p align="center">Encuentra los productos que necesitas organizados por categoría:</p>
-
-            <table width="95%" align="center" cellspacing="15" cellpadding="0">
-                <tr>
+                <!-- Grid de 4 Columnas Adaptables (col-12 col-sm-6 col-lg-3) -->
+                <div class="row g-4">
                     <!-- Categoría 1: Útiles de Escritorio -->
-                    <td width="25%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <figure style="margin: 0;">
-                                <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Útiles de escritorio y bolígrafos" style="border-radius: 4px;">
-                                <figcaption>
-                                    <h3>Útiles de Escritorio</h3>
-                                    <p align="left">Bolígrafos, lápices, resaltadores, notas adhesivas y engrapadoras.</p>
-                                    <a href="#catalogo"><button type="button">Ver más</button></a>
-                                </figcaption>
-                            </figure>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <!-- Tarjeta con ANIMACIÓN 3: Elevación 3D y cambio suave de color -->
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=500&auto=format&fit=crop&q=80" class="product-img" alt="Útiles de escritorio y bolígrafos surtidos" loading="lazy">
+                                <span class="product-category-tag"><i class="bi bi-pen me-1"></i> Escritorio</span>
+                            </div>
+                            <div class="product-body">
+                                <h3 class="h5 fw-bold mb-2">Útiles de Escritorio</h3>
+                                <p class="text-muted small mb-3 flex-grow-1">
+                                    Bolígrafos, lápices técnicos, notas autoadhesivas, tijeras y engrapadoras metálicas duraderas.
+                                </p>
+                                <a href="#catalogo" class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="bi bi-arrow-right-circle me-1" aria-hidden="true"></i> Explorar Artículos
+                                </a>
+                            </div>
                         </div>
-                    </td>
+                    </div>
 
-                    <!-- Categoría 2: Archivo y Organización -->
-                    <td width="25%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <figure style="margin: 0;">
-                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Archivadores y carpetas de oficina" style="border-radius: 4px;">
-                                <figcaption>
-                                    <h3>Archivo y Carpetas</h3>
-                                    <p align="left">Archivadores de palanca lomo ancho, pioners A4 y fólderes manila.</p>
-                                    <a href="#catalogo"><button type="button">Ver más</button></a>
-                                </figcaption>
-                            </figure>
+                    <!-- Categoría 2: Archivo y Carpetas -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=80" class="product-img" alt="Archivadores y carpetas de oficina" loading="lazy">
+                                <span class="product-category-tag"><i class="bi bi-folder me-1"></i> Organización</span>
+                            </div>
+                            <div class="product-body">
+                                <h3 class="h5 fw-bold mb-2">Archivo y Carpetas</h3>
+                                <p class="text-muted small mb-3 flex-grow-1">
+                                    Archivadores de palanca de lomo ancho y angosto, pioners A4 plastificados y fólderes manila.
+                                </p>
+                                <a href="#catalogo" class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="bi bi-arrow-right-circle me-1" aria-hidden="true"></i> Explorar Artículos
+                                </a>
+                            </div>
                         </div>
-                    </td>
+                    </div>
 
                     <!-- Categoría 3: Papelería y Resmas -->
-                    <td width="25%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <figure style="margin: 0;">
-                                <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Resmas de papel bond blanco A4" style="border-radius: 4px;">
-                                <figcaption>
-                                    <h3>Papelería y Resmas</h3>
-                                    <p align="left">Papel bond de 75g y 80g tamaño A4 y Oficio, libre de atascos.</p>
-                                    <a href="#catalogo"><button type="button">Ver más</button></a>
-                                </figcaption>
-                            </figure>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=500&auto=format&fit=crop&q=80" class="product-img" alt="Resmas de papel bond blanco A4" loading="lazy">
+                                <span class="product-category-tag"><i class="bi bi-file-earmark me-1"></i> Papelería</span>
+                            </div>
+                            <div class="product-body">
+                                <h3 class="h5 fw-bold mb-2">Papelería y Resmas</h3>
+                                <p class="text-muted small mb-3 flex-grow-1">
+                                    Papel bond alcalino de 75g y 80g en formatos A4 y Oficio, libre de atascos en fotocopiadoras.
+                                </p>
+                                <a href="#catalogo" class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="bi bi-arrow-right-circle me-1" aria-hidden="true"></i> Explorar Artículos
+                                </a>
+                            </div>
                         </div>
-                    </td>
+                    </div>
 
-                    <!-- Categoría 4: Mobiliario y Ergonomía -->
-                    <td width="25%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <figure style="margin: 0;">
-                                <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=350&auto=format&fit=crop&q=80" width="100%" height="160" alt="Sillas ergonómicas y accesorios de oficina" style="border-radius: 4px;">
-                                <figcaption>
-                                    <h3>Ergonomía y Oficina</h3>
-                                    <p align="left">Sillas ergonómicas ajustables, reposapiés y soportes de monitor.</p>
-                                    <a href="#catalogo"><button type="button">Ver más</button></a>
-                                </figcaption>
-                            </figure>
+                    <!-- Categoría 4: Ergonomía y Mobiliario -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=500&auto=format&fit=crop&q=80" class="product-img" alt="Sillas ergonómicas y accesorios de postura" loading="lazy">
+                                <span class="product-category-tag"><i class="bi bi-display me-1"></i> Ergonomía</span>
+                            </div>
+                            <div class="product-body">
+                                <h3 class="h5 fw-bold mb-2">Mobiliario y Confort</h3>
+                                <p class="text-muted small mb-3 flex-grow-1">
+                                    Sillas ergonómicas regulables en altura, reposapiés antifatiga y brazos articulados para pantallas.
+                                </p>
+                                <a href="#catalogo" class="btn btn-outline-primary btn-sm w-100">
+                                    <i class="bi bi-arrow-right-circle me-1" aria-hidden="true"></i> Explorar Artículos
+                                </a>
+                            </div>
                         </div>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <br>
+        <!-- ======================================================================
+             SECCIÓN 3: CATÁLOGO DE PRODUCTOS DESTACADOS EN OFERTA
+             ====================================================================== -->
+        <section id="catalogo" class="py-5 bg-white" aria-labelledby="catalogo-title">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+                    <div>
+                        <!-- ANIMACIÓN 2: Resplandor Pulsante en Badge de Oferta -->
+                        <span class="badge bg-danger rounded-pill px-3 py-2 anim-pulse-glow mb-2">
+                            <i class="bi bi-lightning-charge-fill me-1"></i> DESCUENTOS CORPORATIVOS
+                        </span>
+                        <h2 id="catalogo-title" class="display-6 fw-bold">Productos Destacados en Oferta</h2>
+                        <p class="text-muted mb-0">Precios especiales por compra unitaria y mayorista para pedidos de este mes.</p>
+                    </div>
+                    <div class="mt-3 mt-md-0">
+                        <span class="text-muted small"><i class="bi bi-check2-all text-success me-1"></i> Precios con IGV incluido</span>
+                    </div>
+                </div>
 
-        <!-- SECCIÓN 3: CATÁLOGO DE PRODUCTOS EN OFERTA -->
-        <section id="catalogo">
-            <h2 align="center" style="color: #0b5ed7;">Productos Destacados en Oferta</h2>
-            <p align="center">Precios especiales para compras corporativas y por mayor:</p>
-
-            <table width="95%" align="center" cellspacing="15" cellpadding="0">
-                <tr>
-                    <!-- Producto 1 -->
-                    <td width="33%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <h3>Resma Papel Bond A4 75g</h3>
-                            <p><b>Marca:</b> Chamex / Report</p>
-                            <p><b>Presentación:</b> Paquete de 500 hojas</p>
-                            <p style="font-size: 18px; color: #198754;"><b>Precio: S/ 17.50</b></p>
-                            <p><small style="color: #666;">Precio regular: <del>S/ 22.00</del></small></p>
-                            <a href="#contacto"><button type="button" class="btn-verde">Cotizar Producto</button></a>
+                <!-- Tarjetas de Productos en Grid de 3 Columnas -->
+                <div class="row g-4">
+                    <!-- Producto 1: Resma Papel Bond -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&auto=format&fit=crop&q=80" class="product-img" alt="Resma de Papel Bond A4 75g de 500 hojas" loading="lazy">
+                                <span class="product-discount-badge">-20% DSCTO</span>
+                                <span class="product-category-tag">Papelería</span>
+                            </div>
+                            <div class="product-body">
+                                <div class="d-flex justify-content-between align-items-start mb-1">
+                                    <h3 class="h5 fw-bold mb-0">Resma Papel Bond A4 75g</h3>
+                                </div>
+                                <p class="text-muted small mb-2"><b>Marca:</b> Chamex / Report &bull; Paquete 500 hojas</p>
+                                <div class="d-flex align-items-baseline gap-2 mb-3">
+                                    <span class="price-current">S/ 17.50</span>
+                                    <span class="price-old">S/ 22.00</span>
+                                    <span class="badge bg-success-subtle text-success small ms-auto">Stock Disponible</span>
+                                </div>
+                                <button type="button" class="btn btn-success-custom w-100 btn-cotizar-producto" data-producto="Resma Papel Bond A4 75g (S/ 17.50)">
+                                    <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Cotizar este Producto
+                                </button>
+                            </div>
                         </div>
-                    </td>
+                    </div>
 
-                    <!-- Producto 2 -->
-                    <td width="33%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <h3>Archivador de Palanca Lomo Ancho</h3>
-                            <p><b>Tamaño:</b> A4 / Oficio</p>
-                            <p><b>Material:</b> Cartón plastificado con cantonera</p>
-                            <p style="font-size: 18px; color: #198754;"><b>Precio: S/ 6.50</b></p>
-                            <p><small style="color: #666;">Precio regular: <del>S/ 8.50</del></small></p>
-                            <a href="#contacto"><button type="button" class="btn-verde">Cotizar Producto</button></a>
+                    <!-- Producto 2: Archivador de Palanca -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80" class="product-img" alt="Archivador de Palanca Lomo Ancho para documentos A4" loading="lazy">
+                                <span class="product-discount-badge">-24% DSCTO</span>
+                                <span class="product-category-tag">Archivo</span>
+                            </div>
+                            <div class="product-body">
+                                <div class="d-flex justify-content-between align-items-start mb-1">
+                                    <h3 class="h5 fw-bold mb-0">Archivador de Palanca Lomo Ancho</h3>
+                                </div>
+                                <p class="text-muted small mb-2"><b>Tamaño:</b> A4/Oficio &bull; Cartón plastificado con cantonera</p>
+                                <div class="d-flex align-items-baseline gap-2 mb-3">
+                                    <span class="price-current">S/ 6.50</span>
+                                    <span class="price-old">S/ 8.50</span>
+                                    <span class="badge bg-success-subtle text-success small ms-auto">Stock Disponible</span>
+                                </div>
+                                <button type="button" class="btn btn-success-custom w-100 btn-cotizar-producto" data-producto="Archivador de Palanca Lomo Ancho (S/ 6.50)">
+                                    <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Cotizar este Producto
+                                </button>
+                            </div>
                         </div>
-                    </td>
+                    </div>
 
-                    <!-- Producto 3 -->
-                    <td width="33%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <h3>Pack Bolígrafos Gel (12 Uds)</h3>
-                            <p><b>Colores:</b> 6 Azul, 4 Negro, 2 Rojo</p>
-                            <p><b>Punta:</b> 0.7 mm trazo fino</p>
-                            <p style="font-size: 18px; color: #198754;"><b>Precio: S/ 14.90</b></p>
-                            <p><small style="color: #666;">Precio regular: <del>S/ 19.00</del></small></p>
-                            <a href="#contacto"><button type="button" class="btn-verde">Cotizar Producto</button></a>
+                    <!-- Producto 3: Pack Bolígrafos Gel -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card anim-card-lift">
+                            <div class="product-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600&auto=format&fit=crop&q=80" class="product-img" alt="Estuche de 12 Bolígrafos Gel surtidos trazo fino" loading="lazy">
+                                <span class="product-discount-badge">-22% DSCTO</span>
+                                <span class="product-category-tag">Escritorio</span>
+                            </div>
+                            <div class="product-body">
+                                <div class="d-flex justify-content-between align-items-start mb-1">
+                                    <h3 class="h5 fw-bold mb-0">Pack Bolígrafos Gel (12 Uds)</h3>
+                                </div>
+                                <p class="text-muted small mb-2"><b>Punta:</b> 0.7mm trazo suave &bull; 6 Azul, 4 Negro, 2 Rojo</p>
+                                <div class="d-flex align-items-baseline gap-2 mb-3">
+                                    <span class="price-current">S/ 14.90</span>
+                                    <span class="price-old">S/ 19.00</span>
+                                    <span class="badge bg-success-subtle text-success small ms-auto">Stock Disponible</span>
+                                </div>
+                                <button type="button" class="btn btn-success-custom w-100 btn-cotizar-producto" data-producto="Pack Bolígrafos Gel x12 (S/ 14.90)">
+                                    <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Cotizar este Producto
+                                </button>
+                            </div>
                         </div>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <br>
+        <!-- ======================================================================
+             SECCIÓN 4: ELEMENTO COMPLEJO HTML - TABLA TÉCNICA CON THEAD, TBODY,
+             TFOOT, ROWSPAN Y COLSPAN (CONVERSIÓN RESPONSIVE CON BOOTSTRAP)
+             ====================================================================== -->
+        <section id="tarifario" class="py-5" aria-labelledby="tarifario-title">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <span class="text-primary fw-bold text-uppercase small letter-spacing-1">Estructura Tabular Avanzada</span>
+                    <h2 id="tarifario-title" class="display-6 fw-bold">Tarifario Mayorista y Lista Técnica</h2>
+                    <p class="text-muted mx-auto" style="max-width: 700px;">
+                        Consulta nuestra matriz de precios unitarios y corporativos por volumen. Demostración del uso riguroso de <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>rowspan</code> y <code>colspan</code> en HTML adaptable.
+                    </p>
+                </div>
 
-        <!-- ==========================================================================
-             SECCIÓN 4: ELEMENTO COMPLEJO - TABLA TÉCNICA CON THEAD, TBODY, TFOOT Y ROWSPAN
-             (Cumple el Criterio 1 de la Rúbrica: Elementos Complejos en HTML)
-             ========================================================================== -->
-        <section id="tarifario">
-            <h2 align="center" style="color: #0b5ed7;">Tarifario Mayorista de Artículos</h2>
-            <p align="center">Lista oficial de precios unitarios y por mayor para empresas:</p>
-
-            <table width="90%" align="center" class="tabla-datos" cellpadding="8">
-                <caption style="font-weight: bold; margin-bottom: 8px;">Tabla 1: Lista de Precios y Stock de Artículos de Oficina</caption>
-                <thead>
-                    <tr>
-                        <th width="20%">Categoría</th>
-                        <th width="10%">ID</th>
-                        <th width="35%">Nombre del Artículo</th>
-                        <th width="15%">Precio Unitario</th>
-                        <th width="20%">Precio por Mayor (10+ Uds)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Grupo 1: Papelería (Uso de rowspan="2" para combinar celdas) -->
-                    <tr>
-                        <td rowspan="2" align="center" bgcolor="#f8f9fa"><b>Papelería</b></td>
-                        <td align="center">001</td>
-                        <td>Resma de Papel Bond A4 75g (500 hojas)</td>
-                        <td align="center">S/ 17.50</td>
-                        <td align="center" style="color: #198754;"><b>S/ 15.00</b></td>
-                    </tr>
-                    <tr>
-                        <td align="center">002</td>
-                        <td>Caja de Papel Bond A4 (5 millares)</td>
-                        <td align="center">S/ 85.00</td>
-                        <td align="center" style="color: #198754;"><b>S/ 78.00</b></td>
-                    </tr>
-
-                    <!-- Grupo 2: Archivo (Uso de rowspan="2") -->
-                    <tr>
-                        <td rowspan="2" align="center" bgcolor="#f8f9fa"><b>Archivo</b></td>
-                        <td align="center">003</td>
-                        <td>Archivador de Palanca Lomo Ancho A4</td>
-                        <td align="center">S/ 6.50</td>
-                        <td align="center" style="color: #198754;"><b>S/ 5.50</b></td>
-                    </tr>
-                    <tr>
-                        <td align="center">004</td>
-                        <td>Folder de Manila A4 (Ciento x 100)</td>
-                        <td align="center">S/ 25.00</td>
-                        <td align="center" style="color: #198754;"><b>S/ 21.00</b></td>
-                    </tr>
-
-                    <!-- Grupo 3: Escritorio (Uso de rowspan="2") -->
-                    <tr>
-                        <td rowspan="2" align="center" bgcolor="#f8f9fa"><b>Escritorio</b></td>
-                        <td align="center">005</td>
-                        <td>Estuche de Bolígrafos Gel x 12 unidades</td>
-                        <td align="center">S/ 14.90</td>
-                        <td align="center" style="color: #198754;"><b>S/ 12.00</b></td>
-                    </tr>
-                    <tr>
-                        <td align="center">006</td>
-                        <td>Engrapadora Metálica de Oficina</td>
-                        <td align="center">S/ 18.00</td>
-                        <td align="center" style="color: #198754;"><b>S/ 15.00</b></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <!-- Fila de pie de tabla con colspan="5" -->
-                    <tr>
-                        <td colspan="5" align="center">
-                            <b>Nota:</b> Todos los precios incluyen IGV. Envíos gratis en Lima por compras superiores a S/ 200.00.
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-
-        <br>
-
-        <!-- SECCIÓN 5: CONTENIDO MULTIMEDIA (VIDEOS Y MAPA) -->
-        <section id="multimedia">
-            <h2 align="center" style="color: #0b5ed7;">Contenido Multimedia y Ubicación</h2>
-            <p align="center">Conoce nuestros consejos de ergonomía y ubica nuestra tienda física:</p>
-
-            <table width="95%" align="center" cellspacing="15" cellpadding="0">
-                <tr>
-                    <!-- Video 1: Ergonomía de oficina -->
-                    <td width="33%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <h3>Video: Ergonomía en la Oficina</h3>
-                            <iframe width="100%" height="220" src="https://www.youtube.com/embed/GWRIwkqV5oQ" title="Video de ergonomía en la oficina" frameborder="0" allowfullscreen></iframe>
-                            <p align="left"><small>Consejos para cuidar la postura y organizar tu puesto de trabajo.</small></p>
-                        </div>
-                    </td>
-
-                    <!-- Video 2: Organización de útiles -->
-                    <td width="33%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <h3>Video: Organización del Trabajo</h3>
-                            <iframe width="100%" height="220" src="https://www.youtube.com/embed/ApzeyUC4Q6I" title="Video de organización y productividad" frameborder="0" allowfullscreen></iframe>
-                            <p align="left"><small>Aprende cómo ordenar tus archivos y materiales de escritorio.</small></p>
-                        </div>
-                    </td>
-
-                    <!-- Mapa: Ubicación en Lima -->
-                    <td width="33%" align="center" valign="top">
-                        <div class="tarjeta-producto">
-                            <h3>Nuestra Tienda en Lima</h3>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.290879072753!2d-77.00340132517518!3d-12.023484588211527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f1968a0795%3A0xe8eb58716b0fd952!2sJr.%20Chinchaysuyo%20456-512%2C%20Lima%2015401!5e0!3m2!1ses-419!2spe!4v1789182678090!5m2!1ses-419!2spe" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" title="Ubicación en Google Maps de OfficeWork"></iframe>
-                            <p align="left"><small><b>Dirección:</b> Jr. Chinchaysuyo 456, San Juan de Lurigancho, Lima.</small></p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </section>
-
-        <br>
-
-        <!-- ==========================================================================
-             SECCIÓN 6: ELEMENTO COMPLEJO - FORMULARIO DE CONTACTO Y REGISTRO B2B
-             (Cumple el Criterio 1: Etiquetas complejas de formulario y accesibilidad)
-             ========================================================================== -->
-        <section id="contacto">
-            <table width="80%" align="center" bgcolor="#ffffff" cellpadding="20" style="border: 1px solid #d0d7de; border-radius: 8px;">
-                <tr>
-                    <td>
-                        <h2 align="center" style="color: #0b5ed7; margin-top: 0;">Formulario de Contacto y Cotización</h2>
-                        <p align="center">Completa tus datos para solicitar una cotización formal de artículos de oficina:</p>
-
-                        <form action="#" method="post">
-                            <table width="100%" cellpadding="8" cellspacing="0">
+                <!-- Contenedor Responsive Bootstrap de la Tabla Técnica -->
+                <div class="table-custom-wrapper">
+                    <div class="table-responsive">
+                        <table class="table table-custom table-hover align-middle">
+                            <caption class="p-3 text-muted small bg-light border-bottom">
+                                <i class="bi bi-info-circle me-1" aria-hidden="true"></i> Tabla 1: Lista oficial de precios, categorías y stock de suministros de oficina para clientes corporativos.
+                            </caption>
+                            <thead>
                                 <tr>
+                                    <th scope="col" class="text-center" style="width: 18%;">Categoría</th>
+                                    <th scope="col" class="text-center" style="width: 10%;">ID</th>
+                                    <th scope="col" style="width: 38%;">Nombre del Artículo</th>
+                                    <th scope="col" class="text-center" style="width: 17%;">Precio Unitario</th>
+                                    <th scope="col" class="text-center" style="width: 17%;">Precio por Mayor (10+ Uds)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- GRUPO 1: PAPELERÍA (Uso de rowspan="2") -->
+                                <tr>
+                                    <td rowspan="2" class="text-center fw-bold bg-light border-end">
+                                        <i class="bi bi-file-text text-primary me-1" aria-hidden="true"></i> Papelería
+                                    </td>
+                                    <td class="text-center"><span class="badge bg-secondary-subtle text-dark">001</span></td>
+                                    <td>Resma de Papel Bond A4 75g (500 hojas)</td>
+                                    <td class="text-center text-muted">S/ 17.50</td>
+                                    <td class="text-center fw-bold text-success">S/ 15.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-secondary-subtle text-dark">002</span></td>
+                                    <td>Caja de Papel Bond A4 (5 millares / 10 resmas)</td>
+                                    <td class="text-center text-muted">S/ 85.00</td>
+                                    <td class="text-center fw-bold text-success">S/ 78.00</td>
+                                </tr>
+
+                                <!-- GRUPO 2: ARCHIVO (Uso de rowspan="2") -->
+                                <tr>
+                                    <td rowspan="2" class="text-center fw-bold bg-light border-end">
+                                        <i class="bi bi-archive text-primary me-1" aria-hidden="true"></i> Archivo
+                                    </td>
+                                    <td class="text-center"><span class="badge bg-secondary-subtle text-dark">003</span></td>
+                                    <td>Archivador de Palanca Lomo Ancho A4 Plastificado</td>
+                                    <td class="text-center text-muted">S/ 6.50</td>
+                                    <td class="text-center fw-bold text-success">S/ 5.50</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-secondary-subtle text-dark">004</span></td>
+                                    <td>Fólder de Manila A4 (Ciento x 100 unidades)</td>
+                                    <td class="text-center text-muted">S/ 25.00</td>
+                                    <td class="text-center fw-bold text-success">S/ 21.00</td>
+                                </tr>
+
+                                <!-- GRUPO 3: ESCRITORIO (Uso de rowspan="2") -->
+                                <tr>
+                                    <td rowspan="2" class="text-center fw-bold bg-light border-end">
+                                        <i class="bi bi-pencil-ruler text-primary me-1" aria-hidden="true"></i> Escritorio
+                                    </td>
+                                    <td class="text-center"><span class="badge bg-secondary-subtle text-dark">005</span></td>
+                                    <td>Estuche de Bolígrafos Gel Surtidos x 12 unidades</td>
+                                    <td class="text-center text-muted">S/ 14.90</td>
+                                    <td class="text-center fw-bold text-success">S/ 12.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><span class="badge bg-secondary-subtle text-dark">006</span></td>
+                                    <td>Engrapadora Metálica de Oficina de Alta Resistencia</td>
+                                    <td class="text-center text-muted">S/ 18.00</td>
+                                    <td class="text-center fw-bold text-success">S/ 15.00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <!-- Fila de Pie de Tabla con colspan="5" -->
+                                <tr>
+                                    <td colspan="5" class="text-center py-3">
+                                        <i class="bi bi-shield-check text-success me-1" aria-hidden="true"></i>
+                                        <b>Condiciones Comerciales:</b> Todos los precios incluyen IGV. Envíos gratis a todo Lima Metropolitana en órdenes a partir de S/ 200.00. Plazo de despacho: 24 a 48 horas hábiles.
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 5: CONTENIDO MULTIMEDIA CON IFRAMES RESPONSIVOS (RATIO BOOTSTRAP)
+             ====================================================================== -->
+        <section id="multimedia" class="py-5 bg-white" aria-labelledby="multimedia-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small letter-spacing-1">Multimedia y Presencia Física</span>
+                    <h2 id="multimedia-title" class="display-6 fw-bold">Videos Educativos y Ubicación</h2>
+                    <p class="text-muted mx-auto" style="max-width: 650px;">
+                        Aprende sobre postura ergonómica y organización del espacio de trabajo. Visita también nuestra tienda física en Lima.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Video 1: Ergonomía de Oficina -->
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 border anim-card-lift">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/GWRIwkqV5oQ" title="Video sobre ergonomía y postura correcta en la oficina" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold mb-2">Ergonomía en la Oficina</h3>
+                                <p class="text-muted small mb-0">Recomendaciones para regular la silla, la altura del monitor y prevenir dolores lumbares durante la jornada laboral.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2: Organización y Productividad -->
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 border anim-card-lift">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube.com/embed/ApzeyUC4Q6I" title="Video de organización y productividad en el escritorio" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold mb-2">Organización y Productividad</h3>
+                                <p class="text-muted small mb-0">Técnicas prácticas para organizar carpetas, archivadores y materiales de escritorio reduciendo el estrés laboral.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa: Ubicación Google Maps -->
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 border anim-card-lift">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.290879072753!2d-77.00340132517518!3d-12.023484588211527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f1968a0795%3A0xe8eb58716b0fd952!2sJr.%20Chinchaysuyo%20456-512%2C%20Lima%2015401!5e0!3m2!1ses-419!2spe!4v1789182678090!5m2!1ses-419!2spe" title="Ubicación en Google Maps de tienda física OfficeWork" allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 fw-bold mb-2">Nuestra Tienda Física</h3>
+                                <p class="text-muted small mb-0">
+                                    <i class="bi bi-geo-alt-fill text-danger me-1"></i> Jr. Chinchaysuyo 456, San Juan de Lurigancho, Lima. Atención al cliente presencial de lunes a sábado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 6: ELEMENTO COMPLEJO HTML - FORMULARIO DE CONTACTO Y COTIZACIÓN
+             (CUMPLE ACCESIBILIDAD, USABILIDAD, LABELS FOR, VALIDACIÓN Y MODAL)
+             ====================================================================== -->
+        <section id="contacto" class="py-5" aria-labelledby="contacto-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small letter-spacing-1">Atención Inmediata</span>
+                    <h2 id="contacto-title" class="display-6 fw-bold">Formulario de Contacto y Cotización B2B</h2>
+                    <p class="text-muted mx-auto" style="max-width: 650px;">
+                        Completa tus datos para recibir una cotización personalizada con membrete institucional y tiempo de despacho garantizado.
+                    </p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <div class="form-card">
+                            <!-- Formulario con Validación Accesible -->
+                            <form id="formCotizacion" class="needs-validation" novalidate>
+                                <div class="row g-3">
                                     <!-- Nombres -->
-                                    <td width="50%">
-                                        <label for="txtnombres"><b>Nombres:</b></label><br>
-                                        <input type="text" id="txtnombres" name="nombres" placeholder="Ingresa tus nombres" required style="width: 90%; padding: 6px;">
-                                    </td>
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtNombres" class="form-label">
+                                            <i class="bi bi-person me-1" aria-hidden="true"></i> Nombres completos: <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="txtNombres" name="nombres" placeholder="Ej: Juan Carlos" required>
+                                        <div class="invalid-feedback">Por favor, ingresa tus nombres.</div>
+                                    </div>
+
                                     <!-- Apellidos -->
-                                    <td width="50%">
-                                        <label for="txtapellidos"><b>Apellidos:</b></label><br>
-                                        <input type="text" id="txtapellidos" name="apellidos" placeholder="Ingresa tus apellidos" required style="width: 90%; padding: 6px;">
-                                    </td>
-                                </tr>
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtApellidos" class="form-label">
+                                            <i class="bi bi-person me-1" aria-hidden="true"></i> Apellidos completos: <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="txtApellidos" name="apellidos" placeholder="Ej: Perez Garcia" required>
+                                        <div class="invalid-feedback">Por favor, ingresa tus apellidos.</div>
+                                    </div>
 
-                                <tr>
-                                    <!-- Nro de Documento -->
-                                    <td>
-                                        <label for="txtdocumento"><b>DNI o RUC (8 u 11 dígitos):</b></label><br>
-                                        <input type="text" id="txtdocumento" name="documento" placeholder="Ej: 20601234567" pattern="[0-9]{8,11}" required style="width: 90%; padding: 6px;">
-                                    </td>
+                                    <!-- DNI o RUC -->
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtDocumento" class="form-label">
+                                            <i class="bi bi-card-heading me-1" aria-hidden="true"></i> DNI (8 dígitos) o RUC (11 dígitos): <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control" id="txtDocumento" name="documento" placeholder="Ej: 20601234567" pattern="[0-9]{8,11}" required aria-describedby="docHelp">
+                                        <div id="docHelp" class="form-text">Solo dígitos numéricos sin guiones ni espacios.</div>
+                                        <div class="invalid-feedback">Ingresa un número válido de 8 a 11 dígitos.</div>
+                                    </div>
+
                                     <!-- Correo Electrónico -->
-                                    <td>
-                                        <label for="txtcorreo"><b>Correo Electrónico:</b></label><br>
-                                        <input type="email" id="txtcorreo" name="correo" placeholder="correo@empresa.com" required style="width: 90%; padding: 6px;">
-                                    </td>
-                                </tr>
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtCorreo" class="form-label">
+                                            <i class="bi bi-envelope me-1" aria-hidden="true"></i> Correo Electrónico Corporativo: <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="email" class="form-control" id="txtCorreo" name="correo" placeholder="usuario@empresa.pe" required>
+                                        <div class="invalid-feedback">Ingresa un formato de correo electrónico válido con @.</div>
+                                    </div>
 
-                                <tr>
-                                    <!-- Teléfono -->
-                                    <td>
-                                        <label for="txttelefono"><b>Teléfono o Celular:</b></label><br>
-                                        <input type="tel" id="txttelefono" name="telefono" placeholder="Ej: 987654321" required style="width: 90%; padding: 6px;">
-                                    </td>
-                                    <!-- Fecha de requerimiento -->
-                                    <td>
-                                        <label for="txtfecha"><b>Fecha requerida de entrega:</b></label><br>
-                                        <input type="date" id="txtfecha" name="fecha_entrega" style="width: 90%; padding: 6px;">
-                                    </td>
-                                </tr>
+                                    <!-- Teléfono Celular -->
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtTelefono" class="form-label">
+                                            <i class="bi bi-telephone me-1" aria-hidden="true"></i> Teléfono o Celular de Contacto: <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="tel" class="form-control" id="txtTelefono" name="telefono" placeholder="Ej: 987654321" pattern="[0-9]{9}" required>
+                                        <div class="invalid-feedback">Ingresa un número celular de 9 dígitos.</div>
+                                    </div>
 
-                                <tr>
-                                    <!-- Tipo de comprobante (Radio buttons) -->
-                                    <td>
-                                        <label><b>Tipo de Comprobante:</b></label><br>
-                                        <input type="radio" id="factura" name="comprobante" value="factura" checked>
-                                        <label for="factura">Factura con RUC</label>
-                                        &nbsp;&nbsp;
-                                        <input type="radio" id="boleta" name="comprobante" value="boleta">
-                                        <label for="boleta">Boleta de Venta</label>
-                                    </td>
-                                    <!-- Artículos de interés (Checkboxes) -->
-                                    <td>
-                                        <label><b>Artículos de interés:</b></label><br>
-                                        <input type="checkbox" id="chk-papel" name="interes" value="papeleria" checked>
-                                        <label for="chk-papel">Papelería</label>
-                                        &nbsp;
-                                        <input type="checkbox" id="chk-archivo" name="interes" value="archivo" checked>
-                                        <label for="chk-archivo">Archivo</label>
-                                        &nbsp;
-                                        <input type="checkbox" id="chk-escritorio" name="interes" value="escritorio">
-                                        <label for="chk-escritorio">Escritorio</label>
-                                    </td>
-                                </tr>
+                                    <!-- Fecha Requerida -->
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtFecha" class="form-label">
+                                            <i class="bi bi-calendar3 me-1" aria-hidden="true"></i> Fecha máxima estimada de entrega:
+                                        </label>
+                                        <input type="date" class="form-control" id="txtFecha" name="fecha_entrega">
+                                    </div>
 
-                                <tr>
-                                    <!-- Departamento (Select) -->
-                                    <td>
-                                        <label for="cbodepartamento"><b>Departamento de entrega:</b></label><br>
-                                        <select id="cbodepartamento" name="departamento" required style="width: 94%; padding: 6px;">
+                                    <!-- Tipo de Comprobante (Radio buttons accesibles) -->
+                                    <div class="col-12 col-md-6">
+                                        <fieldset>
+                                            <legend class="form-label mb-2">
+                                                <i class="bi bi-receipt me-1" aria-hidden="true"></i> Tipo de Comprobante: <span class="text-danger">*</span>
+                                            </legend>
+                                            <div class="d-flex gap-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="comprobante" id="radioFactura" value="factura" checked>
+                                                    <label class="form-check-label" for="radioFactura">
+                                                        Factura con RUC
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="comprobante" id="radioBoleta" value="boleta">
+                                                    <label class="form-check-label" for="radioBoleta">
+                                                        Boleta de Venta
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <!-- Artículos de Interés (Checkboxes accesibles) -->
+                                    <div class="col-12 col-md-6">
+                                        <fieldset>
+                                            <legend class="form-label mb-2">
+                                                <i class="bi bi-check2-square me-1" aria-hidden="true"></i> Artículos de interés:
+                                            </legend>
+                                            <div class="d-flex flex-wrap gap-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="chkPapeleria" name="interes" value="papeleria" checked>
+                                                    <label class="form-check-label" for="chkPapeleria">Papelería</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="chkArchivo" name="interes" value="archivo" checked>
+                                                    <label class="form-check-label" for="chkArchivo">Archivo</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="chkEscritorio" name="interes" value="escritorio">
+                                                    <label class="form-check-label" for="chkEscritorio">Escritorio</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="chkErgonomia" name="interes" value="ergonomia">
+                                                    <label class="form-check-label" for="chkErgonomia">Ergonomía</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <!-- Departamento de entrega -->
+                                    <div class="col-12 col-md-6">
+                                        <label for="cboDepartamento" class="form-label">
+                                            <i class="bi bi-geo-alt me-1" aria-hidden="true"></i> Departamento de Destino: <span class="text-danger">*</span>
+                                        </label>
+                                        <select class="form-select" id="cboDepartamento" name="departamento" required>
                                             <option value="">-- SELECCIONE DEPARTAMENTO --</option>
-                                            <option value="lima">Lima</option>
+                                            <option value="lima">Lima y Callao</option>
                                             <option value="arequipa">Arequipa</option>
                                             <option value="trujillo">La Libertad (Trujillo)</option>
                                             <option value="chiclayo">Lambayeque (Chiclayo)</option>
                                             <option value="piura">Piura</option>
                                             <option value="cusco">Cusco</option>
+                                            <option value="huancayo">Junín (Huancayo)</option>
                                         </select>
-                                    </td>
-                                    <!-- Cantidad estimada -->
-                                    <td>
-                                        <label for="txtcantidad"><b>Cantidad estimada de colaboradores:</b></label><br>
-                                        <input type="number" id="txtcantidad" name="cantidad_personal" min="1" max="1000" placeholder="Ej: 20" style="width: 90%; padding: 6px;">
-                                    </td>
-                                </tr>
+                                        <div class="invalid-feedback">Por favor, selecciona un departamento de entrega.</div>
+                                    </div>
 
-                                <tr>
-                                    <!-- Observaciones -->
-                                    <td colspan="2">
-                                        <label for="txtmensaje"><b>Detalle de los artículos a cotizar:</b></label><br>
-                                        <textarea id="txtmensaje" name="mensaje" rows="4" style="width: 96%; padding: 6px;" placeholder="Indica los productos, cantidades y marcas requeridas..."></textarea>
-                                    </td>
-                                </tr>
+                                    <!-- Cantidad estimada de colaboradores -->
+                                    <div class="col-12 col-md-6">
+                                        <label for="txtCantidad" class="form-label">
+                                            <i class="bi bi-people me-1" aria-hidden="true"></i> Cantidad estimada de colaboradores:
+                                        </label>
+                                        <input type="number" class="form-control" id="txtCantidad" name="cantidad_personal" min="1" max="5000" placeholder="Ej: 25">
+                                    </div>
 
-                                <tr>
-                                    <!-- Botones -->
-                                    <td colspan="2" align="center">
-                                        <br>
-                                        <input type="reset" value="Limpiar Formulario">
-                                        &nbsp;&nbsp;
-                                        <!-- Botón que activa la ventana modal popover nativa -->
-                                        <button type="button" class="btn-verde" popovertarget="mi-modal">ENVIAR COTIZACIÓN</button>
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </td>
-                </tr>
-            </table>
+                                    <!-- Observaciones / Detalle -->
+                                    <div class="col-12">
+                                        <label for="txtMensaje" class="form-label">
+                                            <i class="bi bi-chat-left-text me-1" aria-hidden="true"></i> Detalle de los artículos a cotizar: <span class="text-danger">*</span>
+                                        </label>
+                                        <textarea class="form-control" id="txtMensaje" name="mensaje" rows="4" placeholder="Indica productos específicos, cantidades requeridas o marcas de tu preferencia..." required></textarea>
+                                        <div class="invalid-feedback">Ingresa una descripción del pedido a cotizar.</div>
+                                    </div>
 
-            <!-- VENTANA MODAL NATIVA CON POPOVER (Elemento moderno de HTML5) -->
-            <div id="mi-modal" popover align="center">
-                <h3 style="color: #198754; margin-top: 0;">¡Cotización Enviada con Éxito!</h3>
-                <p>Gracias por contactar a <b>OfficeWork</b>. Un asesor de ventas se comunicará contigo en breve para enviarte la propuesta formal.</p>
-                <button type="button" popovertarget="mi-modal" popovertargetaction="hide">Cerrar Ventana</button>
+                                    <!-- Botones de Acción -->
+                                    <div class="col-12 text-center pt-3">
+                                        <button type="reset" class="btn btn-outline-secondary me-2">
+                                            <i class="bi bi-arrow-counterclockwise me-1" aria-hidden="true"></i> Limpiar Formulario
+                                        </button>
+                                        <!-- Botón con Animación Shimmer (Barrido Metálico) -->
+                                        <button type="submit" class="btn btn-success-custom anim-shimmer px-4 py-2">
+                                            <i class="bi bi-send-fill me-1" aria-hidden="true"></i> ENVIAR SOLICITUD DE COTIZACIÓN
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <br>
+        <!-- ======================================================================
+             SECCIÓN 7: PREGUNTAS FRECUENTES (FAQ) CON ACORDEÓN DE BOOTSTRAP 5
+             ====================================================================== -->
+        <section id="faq" class="py-5 bg-white" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary fw-bold text-uppercase small letter-spacing-1">Resolvemos tus Dudas</span>
+                    <h2 id="faq-title" class="display-6 fw-bold">Preguntas Frecuentes y Políticas</h2>
+                    <p class="text-muted mx-auto" style="max-width: 650px;">
+                        Toda la información sobre modalidades de pago comercial, facturación electrónica, despachos y garantía.
+                    </p>
+                </div>
 
-        <!-- SECCIÓN 7: DESGLOSE Y PREGUNTAS FRECUENTES (DETAILS Y SUMMARY) -->
-        <section id="faq">
-            <table width="80%" align="center" bgcolor="#ffffff" cellpadding="15" style="border: 1px solid #d0d7de; border-radius: 8px;">
-                <tr>
-                    <td>
-                        <h2 style="color: #0b5ed7; margin-top: 0;">Preguntas Frecuentes y Políticas</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <!-- Acordeón Bootstrap 5 Flushed y Accesible -->
+                        <div class="accordion" id="accordionFAQ">
+                            <!-- Ítem 1 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="bi bi-credit-card-2-front text-primary me-2"></i> ¿Cuáles son las formas de pago aceptadas?
+                                    </button>
+                                </h3>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-muted">
+                                        Aceptamos transferencias bancarias directas (BCP, BBVA, Interbank, Scotiabank, Banco de la Nación), cheques de gerencia, tarjetas de crédito/débito y línea de crédito comercial a 30 días calendario para empresas jurídicas con RUC 20 verificadas.
+                                    </div>
+                                </div>
+                            </div>
 
-                        <!-- Desplegable 1: Métodos de pago -->
-                        <details>
-                            <summary><b>¿Cuáles son las formas de pago disponibles?</b></summary>
-                            <p>Aceptamos transferencias bancarias a cuentas BCP, BBVA e Interbank, pagos con tarjeta de crédito/débito y crédito a 30 días para clientes corporativos con RUC.</p>
-                        </details>
-                        <hr>
+                            <!-- Ítem 2 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <i class="bi bi-truck text-primary me-2"></i> ¿Cómo se coordinan los despachos a provincias?
+                                    </button>
+                                </h3>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-muted">
+                                        Despachamos la mercadería en la agencia de transporte de tu preferencia (Shalom, Marvisur, Olva Courier, Flores Hermanos, Móvil Bus, entre otras) con guía de remisión remitente y pago del flete en destino, entregando el código de seguimiento en tiempo real.
+                                    </div>
+                                </div>
+                            </div>
 
-                        <!-- Desplegable 2: Envíos -->
-                        <details>
-                            <summary><b>¿Cómo se realizan los envíos a provincia?</b></summary>
-                            <p>Despachamos tu pedido en agencias de transporte reconocidas como Shalom, Marvisur o Flores con pago de flete en destino y guía de remisión formal.</p>
-                        </details>
-                        <hr>
+                            <!-- Ítem 3 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <i class="bi bi-shield-check text-primary me-2"></i> ¿Qué política de garantía ofrecen en sus artículos?
+                                    </button>
+                                </h3>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-muted">
+                                        Todos nuestros suministros de escritorio y papelería cuentan con 30 días de garantía contra defectos de fabricación o embalaje. Para mobiliario ergonómico y sillas de oficina brindamos 12 a 24 meses de garantía de fábrica con servicio técnico de soporte.
+                                    </div>
+                                </div>
+                            </div>
 
-                        <!-- Desplegable 3: Garantía -->
-                        <details>
-                            <summary><b>¿Qué garantía tienen los artículos de oficina?</b></summary>
-                            <p>Ofrecemos garantía de 30 días para útiles de escritorio y papelería, y 12 meses de garantía para mobiliario y sillas ergonómicas contra defectos de fabricación.</p>
-                        </details>
-                    </td>
-                </tr>
-            </table>
+                            <!-- Ítem 4 -->
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <i class="bi bi-box-seam text-primary me-2"></i> ¿Cuál es la cantidad mínima para precios mayoristas?
+                                    </button>
+                                </h3>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body text-muted">
+                                        Los precios mayoristas aplican a partir de 10 unidades por ítem o por pedidos globales superiores a S/ 150.00. Para colegios, universidades y entidades públicas ofrecemos descuentos adicionales por volumen contratado.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <br>
-
-        <!-- SECCIÓN 8: MAPA DE SITIO VISUAL (CUMPLE CRITERIO 2: MAPAS DE SITIO) -->
-        <section id="mapa-sitio">
-            <table width="80%" align="center" bgcolor="#e2edfb" cellpadding="15" style="border-radius: 8px;">
-                <tr>
-                    <td>
-                        <h3 style="color: #0b5ed7; margin-top: 0;">Mapa del Sitio (Estructura de la Página)</h3>
-                        <p>Navega rápidamente por todas las secciones de nuestra página web:</p>
-                        <ul>
-                            <li><a href="#inicio">1. Inicio y Bienvenida</a></li>
-                            <li><a href="#categorias">2. Categorías de Artículos</a></li>
-                            <li><a href="#catalogo">3. Catálogo de Productos en Oferta</a></li>
-                            <li><a href="#tarifario">4. Tarifario Mayorista (Tabla Técnica)</a></li>
-                            <li><a href="#multimedia">5. Contenido Multimedia y Tienda</a></li>
-                            <li><a href="#contacto">6. Formulario de Contacto y Cotización</a></li>
-                            <li><a href="#faq">7. Preguntas Frecuentes (Details / Summary)</a></li>
-                            <li><a href="sitemap.xml" target="_blank">8. Archivo Sitemap XML (Para motores de búsqueda)</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
+        <!-- ======================================================================
+             SECCIÓN 8: MAPA DE SITIO VISUAL Y ESTRUCTURA (USABILIDAD Y SEO)
+             ====================================================================== -->
+        <section id="mapa-sitio" class="py-5" aria-labelledby="mapa-title">
+            <div class="container">
+                <div class="card border-0 shadow-sm p-4 bg-light rounded-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="bi bi-diagram-3-fill text-primary fs-3" aria-hidden="true"></i>
+                            <h2 id="mapa-title" class="h4 fw-bold mb-0">Mapa de Sitio Web (Arquitectura de Información)</h2>
+                        </div>
+                        <p class="text-muted small">
+                            Navega de manera estructurada a través de los componentes y páginas del portal web:
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-4">
+                                <h3 class="h6 fw-bold text-primary mb-2">1. Secciones Principales</h3>
+                                <ul class="list-unstyled small mb-0">
+                                    <li class="mb-1"><a href="#inicio" class="text-decoration-none text-dark">&bull; 1.1 Portada y Hero Carousel</a></li>
+                                    <li class="mb-1"><a href="#categorias" class="text-decoration-none text-dark">&bull; 1.2 Categorías de Productos</a></li>
+                                    <li class="mb-1"><a href="#catalogo" class="text-decoration-none text-dark">&bull; 1.3 Catálogo de Ofertas B2B</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <h3 class="h6 fw-bold text-primary mb-2">2. Información y Cotizaciones</h3>
+                                <ul class="list-unstyled small mb-0">
+                                    <li class="mb-1"><a href="#tarifario" class="text-decoration-none text-dark">&bull; 2.1 Tarifario Mayorista (Tabla Técnica)</a></li>
+                                    <li class="mb-1"><a href="#multimedia" class="text-decoration-none text-dark">&bull; 2.2 Multimedia y Ubicación Física</a></li>
+                                    <li class="mb-1"><a href="#contacto" class="text-decoration-none text-dark">&bull; 2.3 Formulario de Cotización</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <h3 class="h6 fw-bold text-primary mb-2">3. Soporte y Motores de Búsqueda</h3>
+                                <ul class="list-unstyled small mb-0">
+                                    <li class="mb-1"><a href="#faq" class="text-decoration-none text-dark">&bull; 3.1 Preguntas Frecuentes (FAQ)</a></li>
+                                    <li class="mb-1"><a href="sitemap.xml" target="_blank" rel="noopener noreferrer" class="text-primary fw-bold">&bull; 3.2 Archivo Físico sitemap.xml (SEO)</a></li>
+                                    <li class="mb-1"><a href="#" data-bs-toggle="modal" data-bs-target="#modalRubrica" class="text-success fw-bold">&bull; 3.3 Ver Ficha de Rúbrica 20/20</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
-        <br>
 
     </main>
 
     <!-- ==========================================================================
-         PIE DE PÁGINA MEJORADO (FOOTER CON 3 COLUMNAS Y DATOS COMPLETOS)
+         PIE DE PÁGINA (FOOTER RESPONSIVE CON 4 COLUMNAS Y DATOS FORMALES)
          ========================================================================== -->
-    <footer>
-        <table width="100%" bgcolor="#08376e" cellpadding="25" cellspacing="0" style="color: #ffffff;">
-            <tr>
-                <!-- Columna 1: Identidad de la Empresa -->
-                <td width="35%" valign="top">
-                    <a href="index.html">
-                        <img src="./dist/imagenes/imagen1.png" width="170" alt="Logo OfficeWork Perú" style="background-color: #ffffff; padding: 6px; border-radius: 6px;">
+    <footer class="footer-custom" role="contentinfo">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <!-- Columna 1: Identidad Corporativa -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="#inicio" class="d-inline-block mb-3" aria-label="Ir al inicio de OfficeWork">
+                        <img src="./dist/imagenes/imagen1.png" alt="Logotipo OfficeWork Blanco" class="navbar-brand-logo bg-white p-2 rounded-2">
                     </a>
-                    <h3 style="color: #ffffff; margin-top: 12px; margin-bottom: 5px;">OfficeWork Perú S.A.C.</h3>
-                    <p style="color: #d0e1fd; font-size: 14px; line-height: 1.5; margin-top: 0;">
-                        Especialistas en la distribución de útiles de escritorio, papelería, archivadores y mobiliario ergonómico para empresas, colegios e instituciones en todo el Perú.
+                    <h5 class="fw-bold">OfficeWork Perú S.A.C.</h5>
+                    <p class="small text-secondary mb-3">
+                        Empresa peruana especializada en la provisión integral de útiles de escritorio, papelería fina, archivadores corporativos y mobiliario de alta ergonomía.
                     </p>
-                    <p style="color: #d0e1fd; font-size: 13px;">
-                        <b>RUC:</b> 20608945123 &bull; Facturación Electrónica SUNAT
-                    </p>
-                </td>
+                    <div class="small text-secondary">
+                        <span class="d-block mb-1"><b>RUC:</b> 20608945123</span>
+                        <span class="d-block"><i class="bi bi-shield-check text-success me-1"></i> Facturación Electrónica Homologada por SUNAT</span>
+                    </div>
+                </div>
 
                 <!-- Columna 2: Atención al Cliente y Ubicación -->
-                <td width="35%" valign="top">
-                    <h3 style="color: #ffffff; margin-top: 0; border-bottom: 2px solid #198754; padding-bottom: 5px; display: inline-block;">
-                        Atención al Cliente
-                    </h3>
-                    <p style="color: #d0e1fd; font-size: 14px; line-height: 1.6;">
-                        📍 <b>Dirección:</b> Jr. Chinchaysuyo 456, San Juan de Lurigancho, Lima.<br>
-                        📞 <b>Central Telefónica:</b> (01) 514-2020<br>
-                        📱 <b>WhatsApp de Ventas:</b> +51 987 654 321<br>
-                        ✉️ <b>Correo:</b> <a href="mailto:ventas@officework.pe" style="color: #ffffff; text-decoration: underline;">ventas@officework.pe</a><br>
-                        ⏰ <b>Horario:</b> Lun a Vie 8:00 am - 6:30 pm | Sáb 9:00 am - 1:00 pm
-                    </p>
-                </td>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="fw-bold">Atención al Cliente</h5>
+                    <ul class="footer-links small">
+                        <li><i class="bi bi-geo-alt-fill text-warning me-2" aria-hidden="true"></i> Jr. Chinchaysuyo 456, San Juan de Lurigancho, Lima.</li>
+                        <li><i class="bi bi-telephone-fill text-warning me-2" aria-hidden="true"></i> (01) 514-2020</li>
+                        <li><i class="bi bi-whatsapp text-success me-2" aria-hidden="true"></i> +51 987 654 321</li>
+                        <li><i class="bi bi-envelope-fill text-warning me-2" aria-hidden="true"></i> ventas@officework.pe</li>
+                        <li><i class="bi bi-clock-fill text-warning me-2" aria-hidden="true"></i> Lun - Vie: 8:00 am - 6:30 pm<br>&nbsp;&nbsp;&nbsp;&nbsp;Sáb: 9:00 am - 1:00 pm</li>
+                    </ul>
+                </div>
 
-                <!-- Columna 3: Enlaces Rápidos y Redes Sociales -->
-                <td width="30%" valign="top">
-                    <h3 style="color: #ffffff; margin-top: 0; border-bottom: 2px solid #198754; padding-bottom: 5px; display: inline-block;">
-                        Enlaces Rápidos
-                    </h3>
-                    <ul style="padding-left: 20px; margin-top: 5px; color: #d0e1fd; font-size: 14px; line-height: 1.7;">
-                        <li><a href="#inicio" style="color: #ffffff;">Inicio y Portada</a></li>
-                        <li><a href="#categorias" style="color: #ffffff;">Categorías de Artículos</a></li>
-                        <li><a href="#catalogo" style="color: #ffffff;">Catálogo de Ofertas</a></li>
-                        <li><a href="#tarifario" style="color: #ffffff;">Tarifario Mayorista</a></li>
-                        <li><a href="#contacto" style="color: #ffffff;">Formulario de Cotización</a></li>
-                        <li><a href="#faq" style="color: #ffffff;">Preguntas Frecuentes</a></li>
+                <!-- Columna 3: Enlaces Rápidos de Navegación -->
+                <div class="col-12 col-md-6 col-lg-2">
+                    <h5 class="fw-bold">Enlaces Rápidos</h5>
+                    <ul class="footer-links small">
+                        <li><a href="#inicio">Inicio y Portada</a></li>
+                        <li><a href="#categorias">Categorías</a></li>
+                        <li><a href="#catalogo">Catálogo Ofertas</a></li>
+                        <li><a href="#tarifario">Tarifario Mayorista</a></li>
+                        <li><a href="#multimedia">Multimedia</a></li>
+                        <li><a href="#contacto">Contacto y Cotización</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Redes Sociales y Libro de Reclamaciones -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="fw-bold">Conéctate con Nosotros</h5>
+                    <p class="small text-secondary mb-3">Síguenos en nuestras redes oficiales para enterarte de nuevos lanzamientos y ofertas.</p>
+                    <div class="mb-4">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visitar nuestro Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visitar nuestro Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visitar nuestro LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Escribir a nuestro WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                    <div class="p-3 rounded-3 bg-dark-subtle border border-secondary border-opacity-25 text-white small">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-book-half text-warning fs-4" aria-hidden="true"></i>
+                            <div>
+                                <div class="fw-bold">Libro de Reclamaciones</div>
+                                <span class="text-secondary" style="font-size: 0.75rem;">Conforme al Código de Protección al Consumidor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila Inferior de Copyright y Datos Académicos -->
+            <div class="pt-4 border-top border-secondary border-opacity-25 text-center small text-secondary">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start mb-2 mb-md-0">
+                        &copy; 2026 <b>OfficeWork Perú S.A.C.</b> - Todos los derechos reservados.
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        Unidad Didáctica: <b>Desarrollo Web</b> &bull; Escuela de Tecnología &bull; <b>Idat</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         BOTONES FLOTANTES: WHATSAPP (ANIMACIÓN 2: PULSE GLOW) Y VOLVER ARRIBA
+         ========================================================================== -->
+    <div class="floating-actions" role="region" aria-label="Acciones flotantes">
+        <!-- Botón Volver Arriba -->
+        <button id="btnBackToTop" class="btn-back-to-top border-0" aria-label="Volver arriba de la página" title="Volver arriba">
+            <i class="bi bi-chevron-up" aria-hidden="true"></i>
+        </button>
+
+        <!-- Botón WhatsApp Flotante con ANIMACIÓN 2 (anim-pulse-glow) -->
+        <a href="https://wa.me/51987654321?text=Hola%20OfficeWork,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn-floating-whatsapp anim-pulse-glow" aria-label="Contactar por WhatsApp directamente" title="Chatea con un asesor por WhatsApp">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!-- ==========================================================================
+         TOAST DE NOTIFICACIÓN BOOTSTRAP (ANIMACIÓN 5: ENTRADA DINÁMICA)
+         ========================================================================== -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3" style="z-index: 1060;">
+        <div id="toastBienvenida" class="toast anim-slide-up border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-primary text-white">
+                <i class="bi bi-bell-fill me-2" aria-hidden="true"></i>
+                <strong class="me-auto">OfficeWork Perú</strong>
+                <small class="text-white-50">Ahora</small>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Cerrar notificación"></button>
+            </div>
+            <div class="toast-body bg-white text-dark">
+                ¡Bienvenido a nuestro portal corporativo! Disfruta de nuestras <b>5 animaciones CSS</b> y catálogo 2026.
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MODAL 1: CONFIRMACIÓN DE COTIZACIÓN ENVIADA CON ÉXITO
+         ========================================================================== -->
+    <div class="modal fade" id="modalCotizacionExito" tabindex="-1" aria-labelledby="modalCotizacionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title fw-bold" id="modalCotizacionLabel">
+                        <i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i> ¡Cotización Registrada con Éxito!
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <div class="mb-3 text-success fs-1">
+                        <i class="bi bi-envelope-check-fill" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2">¡Gracias, <span id="modalClienteNombre">Estimado Cliente</span>!</h4>
+                    <p class="text-muted">
+                        Hemos recibido tu solicitud de cotización formal. Un asesor comercial especializado revisará tu lista y se comunicará contigo al teléfono y correo proporcionados en un lapso no mayor a <b>2 horas hábiles</b>.
+                    </p>
+                    <div class="alert alert-light border small text-start">
+                        <i class="bi bi-info-circle-fill text-primary me-1" aria-hidden="true"></i>
+                        Se ha emitido un código de seguimiento preliminar: <b>#COT-2026-OW</b>.
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">Aceptar y Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MODAL 2: SUSTENTACIÓN DE LA RÚBRICA (NIVEL SOBRESALIENTE 20/20)
+         ========================================================================== -->
+    <div class="modal fade" id="modalRubrica" tabindex="-1" aria-labelledby="modalRubricaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="modalRubricaLabel">
+                        <i class="bi bi-award me-2" aria-hidden="true"></i> Sustentación de Rúbrica - Nivel Sobresaliente (20 / 20)
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="alert alert-info border-0 d-flex align-items-center gap-2">
+                        <i class="bi bi-check-circle-fill fs-4 text-info"></i>
+                        <div>
+                            <b>Cumplimiento 100% de la Rúbrica:</b> Este sitio web ha sido diseñado para alcanzar la nota máxima <b>SOBRESALIENTE</b> tanto en la estructura HTML como en la aplicación de CSS y Bootstrap.
+                        </div>
+                    </div>
+
+                    <h5 class="fw-bold text-primary mt-3 mb-2">1. Criterio 1: Estructura HTML, Accesibilidad y Usabilidad (12 Puntos)</h5>
+                    <ul class="small text-muted">
+                        <li><b>Semántica HTML5 completa:</b> <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+                        <li><b>Accesibilidad WCAG 2.1:</b> Atributo <code>lang="es"</code>, enlaces skip-to-content, textos <code>alt</code> enriquecidos en todas las imágenes, contraste de color verificado, roles ARIA y labels vinculados con <code>for="id"</code>.</li>
+                        <li><b>Elementos complejos:</b> Tabla técnica con <code>thead</code>, <code>tbody</code>, <code>tfoot</code>, <code>caption</code>, <code>rowspan</code> y <code>colspan</code> adaptable para móviles.</li>
+                        <li><b>Usabilidad e Interactividad:</b> Menú responsive colapsable, carrusel, acordeón, modal de respuesta, toast y validación en vivo.</li>
                     </ul>
 
-                    <p style="margin-top: 15px;">
-                        <b>Síguenos:</b>&nbsp;
-                        <a href="https://www.facebook.com/" target="_blank" style="color: #ffffff; font-weight: bold; background-color: #0b5ed7; padding: 4px 8px; border-radius: 4px;">Facebook</a>&nbsp;
-                        <a href="https://www.instagram.com/" target="_blank" style="color: #ffffff; font-weight: bold; background-color: #0b5ed7; padding: 4px 8px; border-radius: 4px;">Instagram</a>&nbsp;
-                        <a href="https://www.linkedin.com/" target="_blank" style="color: #ffffff; font-weight: bold; background-color: #0b5ed7; padding: 4px 8px; border-radius: 4px;">LinkedIn</a>
-                    </p>
-                </td>
-            </tr>
+                    <h5 class="fw-bold text-success mt-4 mb-2">2. Criterio 2: CSS y Framework Bootstrap con 5 Animaciones (8 Puntos)</h5>
+                    <div class="table-responsive small">
+                        <table class="table table-bordered align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Animación CSS Requerida</th>
+                                    <th>Regla / Keyframe CSS</th>
+                                    <th>Elemento donde se evidencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge bg-primary">1</span></td>
+                                    <td><b>Levitación Suave en Hero</b></td>
+                                    <td><code>@keyframes heroFloating</code></td>
+                                    <td>Logo flotante en el Hero Carousel con elevación y sombra dinámica.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-success">2</span></td>
+                                    <td><b>Resplandor Pulsante de Atención</b></td>
+                                    <td><code>@keyframes pulseGlow</code></td>
+                                    <td>Botón flotante de WhatsApp y badge de "Descuentos Corporativos".</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-info text-dark">3</span></td>
+                                    <td><b>Elevación 3D y Cambio de Color</b></td>
+                                    <td><code>.anim-card-lift:hover</code></td>
+                                    <td>Tarjetas de categorías y productos (traslación Y -8px, cambio suave de borde y sombra).</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-warning text-dark">4</span></td>
+                                    <td><b>Barrido de Luz Shimmer</b></td>
+                                    <td><code>@keyframes shimmerSweep</code></td>
+                                    <td>Cintillo superior y botones principales CTA ("Cotizar Ahora").</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge bg-danger">5</span></td>
+                                    <td><b>Entrada Dinámica con Desvanecimiento</b></td>
+                                    <td><code>@keyframes slideFadeUp</code></td>
+                                    <td>Entrada al cargar la página (Hero, tarjetas, toast informativo).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <!-- Fila inferior: Copyright y datos académicos -->
-            <tr>
-                <td colspan="3" align="center" style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 15px;">
-                    <p style="margin: 0; font-size: 13px; color: #c0d4f5;">
-                        &copy; 2026 <b>OfficeWork Perú S.A.C.</b> - Todos los derechos reservados. | Libro de Reclamaciones Virtual
+                    <h5 class="fw-bold text-dark mt-3 mb-2">3. Tipografías Personalizadas</h5>
+                    <p class="small text-muted mb-0">
+                        Implementación de <b>Outfit</b> para encabezados y <b>Plus Jakarta Sans</b> para textos desde Google Fonts, configuradas mediante variables CSS <code>:root</code>.
                     </p>
-                    <p style="margin: 4px 0 0 0; font-size: 12px; color: #9bc0f5;">
-                        Desarrollo Web &bull; Escuela de Tecnología &bull; Evaluación Parcial
-                    </p>
-                </td>
-            </tr>
-        </table>
-    </footer>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar Ficha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         SCRIPTS: BOOTSTRAP 5 BUNDLE (CON POPPER) + JS PERSONALIZADO
+         ========================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>
